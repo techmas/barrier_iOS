@@ -13,7 +13,7 @@ import UIKit
 @IBDesignable
 class RoundedUIButton: UIButton {
     
-    var shadowAdded: Bool = false
+    var shadowAdded: Bool = true
     
     @IBInspectable var cornerRadius: CGFloat = 21 {
         didSet {
@@ -34,7 +34,7 @@ class RoundedUIButton: UIButton {
         shadowLayer.backgroundColor = UIColor.clear
         shadowLayer.layer.shadowColor = UIColor.darkGray.cgColor
         shadowLayer.layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: self.cornerRadius).cgPath
-        shadowLayer.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        shadowLayer.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
         shadowLayer.layer.shadowOpacity = 0.5
         shadowLayer.layer.shadowRadius = 1
         shadowLayer.layer.masksToBounds = true

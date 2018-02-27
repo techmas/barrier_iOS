@@ -24,7 +24,7 @@ class RoundedUITextField: UITextField {
         updatePresentation()
         }}
     
-    @IBInspectable var shadowRadius:CGFloat = 2{didSet{
+    @IBInspectable var shadowRadius:CGFloat = 1{didSet{
         updatePresentation()
         }}
     
@@ -41,7 +41,7 @@ class RoundedUITextField: UITextField {
     }
     
     func setupShadow(){
-        self.addShadow(to: [.top], radius: shadowRadius)
+        //self.addShadow(to: [.top], radius: shadowRadius)
     }
     
     override func layoutSubviews() {
