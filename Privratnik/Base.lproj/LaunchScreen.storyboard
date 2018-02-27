@@ -1,7 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,7 +18,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="centralBlock" translatesAutoresizingMaskIntoConstraints="NO" id="i7Z-1G-YZu">
+                                <rect key="frame" x="0.0" y="126" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="i7Z-1G-YZu" secondAttribute="height" multiplier="1:1" id="P0h-Fe-oiJ"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downBlock" translatesAutoresizingMaskIntoConstraints="NO" id="9yz-hp-7tf">
+                                <rect key="frame" x="0.0" y="506" width="375" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9yz-hp-7tf" secondAttribute="height" multiplier="375:137" id="KXR-nn-e9e"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.20784313725490194" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9yz-hp-7tf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6LB-A2-lO3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9yz-hp-7tf" secondAttribute="trailing" id="AsE-fO-RUm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="i7Z-1G-YZu" secondAttribute="trailing" id="Qnc-Cy-bNx"/>
+                            <constraint firstItem="9yz-hp-7tf" firstAttribute="top" secondItem="i7Z-1G-YZu" secondAttribute="bottom" constant="5" id="ejS-gp-lRI"/>
+                            <constraint firstItem="i7Z-1G-YZu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-20" id="exB-Gq-418"/>
+                            <constraint firstItem="i7Z-1G-YZu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qtA-6X-JXN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -22,4 +49,8 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="centralBlock" width="401" height="400"/>
+        <image name="downBlock" width="375" height="137"/>
+    </resources>
 </document>

@@ -7,21 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		32147F9A203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */; };
+		32147F9C203D94CA00DD2E23 /* LoginEnterSmsCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147F9B203D94CA00DD2E23 /* LoginEnterSmsCodeVC.swift */; };
+		32147F9E203DA7E900DD2E23 /* ShlagbaumTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */; };
 		A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB98E203C758900F030C4 /* AppDelegate.swift */; };
-		A14BB991203C758900F030C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB990203C758900F030C4 /* ViewController.swift */; };
-		A14BB994203C758900F030C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Main.storyboard */; };
+		A14BB994203C758900F030C4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Login.storyboard */; };
 		A14BB996203C758900F030C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BB995203C758900F030C4 /* Assets.xcassets */; };
 		A14BB999203C758900F030C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB997203C758900F030C4 /* LaunchScreen.storyboard */; };
+		A1BC604D20442BD000392411 /* RoundedUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC604C20442BD000392411 /* RoundedUIButton.swift */; };
+		A1BC604F20442EB900392411 /* InnerShadowInUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */; };
+		A1BC60522044316400392411 /* RoundedUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC60512044316400392411 /* RoundedUITextField.swift */; };
+		A1BC60542044332000392411 /* RoundedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC60532044332000392411 /* RoundedUIView.swift */; };
+		A1BC605720446CDE00392411 /* JMMaskTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC605520446CDD00392411 /* JMMaskTextField.swift */; };
+		A1BC605820446CDE00392411 /* JMStringMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BC605620446CDE00392411 /* JMStringMask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnterPhoneNumberVC.swift; sourceTree = "<group>"; };
+		32147F9B203D94CA00DD2E23 /* LoginEnterSmsCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnterSmsCodeVC.swift; sourceTree = "<group>"; };
+		32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShlagbaumTableVC.swift; sourceTree = "<group>"; };
 		A14BB98B203C758900F030C4 /* Privratnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privratnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14BB98E203C758900F030C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A14BB990203C758900F030C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A14BB993203C758900F030C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A14BB993203C758900F030C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		A14BB995203C758900F030C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A14BB998203C758900F030C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A14BB99A203C758900F030C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1BC604C20442BD000392411 /* RoundedUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIButton.swift; sourceTree = "<group>"; };
+		A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerShadowInUIView.swift; sourceTree = "<group>"; };
+		A1BC60512044316400392411 /* RoundedUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUITextField.swift; sourceTree = "<group>"; };
+		A1BC60532044332000392411 /* RoundedUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIView.swift; sourceTree = "<group>"; };
+		A1BC605520446CDD00392411 /* JMMaskTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMMaskTextField.swift; sourceTree = "<group>"; };
+		A1BC605620446CDE00392411 /* JMStringMask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JMStringMask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +71,37 @@
 			isa = PBXGroup;
 			children = (
 				A14BB98E203C758900F030C4 /* AppDelegate.swift */,
-				A14BB990203C758900F030C4 /* ViewController.swift */,
-				A14BB992203C758900F030C4 /* Main.storyboard */,
+				A14BB992203C758900F030C4 /* Login.storyboard */,
+				32147F9B203D94CA00DD2E23 /* LoginEnterSmsCodeVC.swift */,
+				A1BC60502044314000392411 /* UIExtensions */,
+				32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */,
+				32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */,
 				A14BB995203C758900F030C4 /* Assets.xcassets */,
 				A14BB997203C758900F030C4 /* LaunchScreen.storyboard */,
 				A14BB99A203C758900F030C4 /* Info.plist */,
 			);
 			path = Privratnik;
+			sourceTree = "<group>";
+		};
+		A1BC60502044314000392411 /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1BC605920446CE700392411 /* MaskedTextField */,
+				A1BC604C20442BD000392411 /* RoundedUIButton.swift */,
+				A1BC60532044332000392411 /* RoundedUIView.swift */,
+				A1BC60512044316400392411 /* RoundedUITextField.swift */,
+				A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */,
+			);
+			path = UIExtensions;
+			sourceTree = "<group>";
+		};
+		A1BC605920446CE700392411 /* MaskedTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A1BC605520446CDD00392411 /* JMMaskTextField.swift */,
+				A1BC605620446CDE00392411 /* JMStringMask.swift */,
+			);
+			path = MaskedTextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +165,7 @@
 			files = (
 				A14BB999203C758900F030C4 /* LaunchScreen.storyboard in Resources */,
 				A14BB996203C758900F030C4 /* Assets.xcassets in Resources */,
-				A14BB994203C758900F030C4 /* Main.storyboard in Resources */,
+				A14BB994203C758900F030C4 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,20 +176,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14BB991203C758900F030C4 /* ViewController.swift in Sources */,
+				A1BC60542044332000392411 /* RoundedUIView.swift in Sources */,
+				A1BC60522044316400392411 /* RoundedUITextField.swift in Sources */,
+				A1BC605720446CDE00392411 /* JMMaskTextField.swift in Sources */,
+				A1BC604F20442EB900392411 /* InnerShadowInUIView.swift in Sources */,
 				A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */,
+				32147F9C203D94CA00DD2E23 /* LoginEnterSmsCodeVC.swift in Sources */,
+				A1BC604D20442BD000392411 /* RoundedUIButton.swift in Sources */,
+				A1BC605820446CDE00392411 /* JMStringMask.swift in Sources */,
+				32147F9E203DA7E900DD2E23 /* ShlagbaumTableVC.swift in Sources */,
+				32147F9A203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A14BB992203C758900F030C4 /* Main.storyboard */ = {
+		A14BB992203C758900F030C4 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				A14BB993203C758900F030C4 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		A14BB997203C758900F030C4 /* LaunchScreen.storyboard */ = {
