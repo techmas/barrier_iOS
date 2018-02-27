@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		32147F9A203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */; };
 		32147F9E203DA7E900DD2E23 /* ShlagbaumTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */; };
+		328DB16D20458927005E4DD1 /* SupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB16C20458927005E4DD1 /* SupportVC.swift */; };
+		328DB16F20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */; };
 		A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB98E203C758900F030C4 /* AppDelegate.swift */; };
 		A14BB994203C758900F030C4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Login.storyboard */; };
 		A14BB996203C758900F030C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BB995203C758900F030C4 /* Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEnterPhoneNumberVC.swift; sourceTree = "<group>"; };
 		32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShlagbaumTableVC.swift; sourceTree = "<group>"; };
+		328DB16C20458927005E4DD1 /* SupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVC.swift; sourceTree = "<group>"; };
+		328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardWhenTappedAround.swift; sourceTree = "<group>"; };
 		A14BB98B203C758900F030C4 /* Privratnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privratnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14BB98E203C758900F030C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A14BB993203C758900F030C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 				A14BB992203C758900F030C4 /* Login.storyboard */,
 				A1BC60502044314000392411 /* UIExtensions */,
 				32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */,
+				328DB16C20458927005E4DD1 /* SupportVC.swift */,
 				32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */,
 				A14BB995203C758900F030C4 /* Assets.xcassets */,
 				A14BB997203C758900F030C4 /* LaunchScreen.storyboard */,
@@ -88,6 +93,7 @@
 				A1BC60532044332000392411 /* RoundedUIView.swift */,
 				A1BC60512044316400392411 /* RoundedUITextField.swift */,
 				A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */,
+				328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -175,7 +181,9 @@
 			files = (
 				A1BC60542044332000392411 /* RoundedUIView.swift in Sources */,
 				A1BC60522044316400392411 /* RoundedUITextField.swift in Sources */,
+				328DB16D20458927005E4DD1 /* SupportVC.swift in Sources */,
 				A1BC605720446CDE00392411 /* JMMaskTextField.swift in Sources */,
+				328DB16F20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift in Sources */,
 				A1BC604F20442EB900392411 /* InnerShadowInUIView.swift in Sources */,
 				A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */,
 				A1BC604D20442BD000392411 /* RoundedUIButton.swift in Sources */,

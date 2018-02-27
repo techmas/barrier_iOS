@@ -30,6 +30,7 @@ class LoginEnterPhoneNumberVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboardWhenTappedAround()
         screenState = .enteringPhoneNumber
     }
    
@@ -83,6 +84,7 @@ class LoginEnterPhoneNumberVC: UIViewController {
         alert.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.default, handler: {action in self.performSegue(withIdentifier: "showMainScreen", sender: self)}))
         alert.addAction(UIAlertAction(title: "Нет", style: UIAlertActionStyle.cancel, handler: {action in
             AudioServicesPlaySystemSound(1519) // Vibrate!
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
             self.present(wrongCodeAlert, animated: true, completion: nil)
         }))
         self.present(alert, animated: true, completion: nil)

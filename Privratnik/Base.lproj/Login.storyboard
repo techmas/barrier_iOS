@@ -524,10 +524,10 @@
             </objects>
             <point key="canvasLocation" x="1709.5999999999999" y="55.322338830584712"/>
         </scene>
-        <!--View Controller-->
+        <!--SupportVC-->
         <scene sceneID="YvT-t3-jtI">
             <objects>
-                <viewController id="Bx7-bb-9H9" sceneMemberID="viewController">
+                <viewController id="Bx7-bb-9H9" customClass="SupportVC" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FWx-2i-aNr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -667,6 +667,9 @@
                                         <integer key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="Bx7-bb-9H9" eventType="touchUpInside" id="gK9-iu-aB8"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
