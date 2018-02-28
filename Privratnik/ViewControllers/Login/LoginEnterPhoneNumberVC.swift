@@ -15,6 +15,7 @@ class LoginEnterPhoneNumberVC: UIViewController {
     var timer:Timer?
     var seconds = 30
     
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var phoneNumberTextField: RoundedUITextFieldMasked!
     @IBOutlet weak var smsCodeTextField: RoundedUITextFieldMasked!
     @IBOutlet weak var getSmsButton: RoundedUIButton!
@@ -32,6 +33,7 @@ class LoginEnterPhoneNumberVC: UIViewController {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         screenState = .enteringPhoneNumber
+        //addObserversForKeyboardAppearanceToMoveScrollView (vc: self, scrollView: scrollView)
     }
    
     // Timer
@@ -135,6 +137,20 @@ extension LoginEnterPhoneNumberVC: UITextFieldDelegate {
             print ("some unknown textField entered")
         }
         
+        return true
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField == smsCodeTextField {
+           scrollView.setContentOffset(CGPoint(x:0, y:80), animated: true)
+        }
+        return true
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if textField == smsCodeTextField {
+           scrollView.setContentOffset(CGPoint(x:0, y:0), animated: true)
+        }
         return true
     }
     

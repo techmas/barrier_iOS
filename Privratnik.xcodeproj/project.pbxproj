@@ -11,6 +11,17 @@
 		32147F9E203DA7E900DD2E23 /* ShlagbaumTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */; };
 		328DB16D20458927005E4DD1 /* SupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB16C20458927005E4DD1 /* SupportVC.swift */; };
 		328DB16F20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */; };
+		328DB17120458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB17020458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift */; };
+		328DB1732045AC27005E4DD1 /* AddShlagbaumVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB1722045AC27005E4DD1 /* AddShlagbaumVC.swift */; };
+		328DB1752045B439005E4DD1 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB1742045B439005E4DD1 /* SettingsVC.swift */; };
+		328DB1772045B7BC005E4DD1 /* ShlagbaumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB1762045B7BC005E4DD1 /* ShlagbaumTableViewCell.swift */; };
+		328DB1792046E73D005E4DD1 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328DB1782046E73D005E4DD1 /* TabBar.storyboard */; };
+		328DB17C2046E766005E4DD1 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328DB17A2046E766005E4DD1 /* Settings.storyboard */; };
+		328DB17E2046E7EA005E4DD1 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB17D2046E7EA005E4DD1 /* TabBarVC.swift */; };
+		328DB1812046EBC8005E4DD1 /* Shlagbaum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328DB17F2046EBC8005E4DD1 /* Shlagbaum.storyboard */; };
+		328DB1882046ED5D005E4DD1 /* InDevelopment.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 328DB1872046ED5D005E4DD1 /* InDevelopment.storyboard */; };
+		328DB18A20472BE3005E4DD1 /* TabBarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB18920472BE3005E4DD1 /* TabBarUIView.swift */; };
+		328DB18C20472DEA005E4DD1 /* GradientUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB18B20472DEA005E4DD1 /* GradientUIView.swift */; };
 		A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB98E203C758900F030C4 /* AppDelegate.swift */; };
 		A14BB994203C758900F030C4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Login.storyboard */; };
 		A14BB996203C758900F030C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BB995203C758900F030C4 /* Assets.xcassets */; };
@@ -28,6 +39,17 @@
 		32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShlagbaumTableVC.swift; sourceTree = "<group>"; };
 		328DB16C20458927005E4DD1 /* SupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVC.swift; sourceTree = "<group>"; };
 		328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardWhenTappedAround.swift; sourceTree = "<group>"; };
+		328DB17020458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveScrollViewEithKeyboard.swift; sourceTree = "<group>"; };
+		328DB1722045AC27005E4DD1 /* AddShlagbaumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddShlagbaumVC.swift; sourceTree = "<group>"; };
+		328DB1742045B439005E4DD1 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		328DB1762045B7BC005E4DD1 /* ShlagbaumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShlagbaumTableViewCell.swift; sourceTree = "<group>"; };
+		328DB1782046E73D005E4DD1 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		328DB17B2046E766005E4DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Privratnik/Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
+		328DB17D2046E7EA005E4DD1 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		328DB1802046EBC8005E4DD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Privratnik/Base.lproj/Shlagbaum.storyboard; sourceTree = "<group>"; };
+		328DB1872046ED5D005E4DD1 /* InDevelopment.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InDevelopment.storyboard; sourceTree = "<group>"; };
+		328DB18920472BE3005E4DD1 /* TabBarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUIView.swift; sourceTree = "<group>"; };
+		328DB18B20472DEA005E4DD1 /* GradientUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientUIView.swift; sourceTree = "<group>"; };
 		A14BB98B203C758900F030C4 /* Privratnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privratnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14BB98E203C758900F030C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A14BB993203C758900F030C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -53,6 +75,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		328DB1822046ECB1005E4DD1 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				328DB1782046E73D005E4DD1 /* TabBar.storyboard */,
+				328DB17D2046E7EA005E4DD1 /* TabBarVC.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		328DB1832046ECBF005E4DD1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				328DB17A2046E766005E4DD1 /* Settings.storyboard */,
+				328DB1742045B439005E4DD1 /* SettingsVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		328DB1842046ECD0005E4DD1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A14BB992203C758900F030C4 /* Login.storyboard */,
+				32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */,
+				328DB16C20458927005E4DD1 /* SupportVC.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		328DB1852046ECE3005E4DD1 /* Shlagbaums */ = {
+			isa = PBXGroup;
+			children = (
+				328DB17F2046EBC8005E4DD1 /* Shlagbaum.storyboard */,
+				32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */,
+				328DB1722045AC27005E4DD1 /* AddShlagbaumVC.swift */,
+				328DB1762045B7BC005E4DD1 /* ShlagbaumTableViewCell.swift */,
+			);
+			path = Shlagbaums;
+			sourceTree = "<group>";
+		};
+		328DB1862046ECF2005E4DD1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				328DB1842046ECD0005E4DD1 /* Login */,
+				328DB1822046ECB1005E4DD1 /* TabBar */,
+				328DB1852046ECE3005E4DD1 /* Shlagbaums */,
+				328DB1832046ECBF005E4DD1 /* Settings */,
+				328DB1872046ED5D005E4DD1 /* InDevelopment.storyboard */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		A14BB982203C758900F030C4 = {
 			isa = PBXGroup;
 			children = (
@@ -73,11 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				A14BB98E203C758900F030C4 /* AppDelegate.swift */,
-				A14BB992203C758900F030C4 /* Login.storyboard */,
+				328DB1862046ECF2005E4DD1 /* ViewControllers */,
 				A1BC60502044314000392411 /* UIExtensions */,
-				32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */,
-				328DB16C20458927005E4DD1 /* SupportVC.swift */,
-				32147F9D203DA7E900DD2E23 /* ShlagbaumTableVC.swift */,
 				A14BB995203C758900F030C4 /* Assets.xcassets */,
 				A14BB997203C758900F030C4 /* LaunchScreen.storyboard */,
 				A14BB99A203C758900F030C4 /* Info.plist */,
@@ -92,8 +162,11 @@
 				A1BC604C20442BD000392411 /* RoundedUIButton.swift */,
 				A1BC60532044332000392411 /* RoundedUIView.swift */,
 				A1BC60512044316400392411 /* RoundedUITextField.swift */,
+				328DB18920472BE3005E4DD1 /* TabBarUIView.swift */,
+				328DB18B20472DEA005E4DD1 /* GradientUIView.swift */,
 				A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */,
 				328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */,
+				328DB17020458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -166,9 +239,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328DB1882046ED5D005E4DD1 /* InDevelopment.storyboard in Resources */,
+				328DB1792046E73D005E4DD1 /* TabBar.storyboard in Resources */,
 				A14BB999203C758900F030C4 /* LaunchScreen.storyboard in Resources */,
 				A14BB996203C758900F030C4 /* Assets.xcassets in Resources */,
 				A14BB994203C758900F030C4 /* Login.storyboard in Resources */,
+				328DB17C2046E766005E4DD1 /* Settings.storyboard in Resources */,
+				328DB1812046EBC8005E4DD1 /* Shlagbaum.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				328DB1732045AC27005E4DD1 /* AddShlagbaumVC.swift in Sources */,
 				A1BC60542044332000392411 /* RoundedUIView.swift in Sources */,
 				A1BC60522044316400392411 /* RoundedUITextField.swift in Sources */,
 				328DB16D20458927005E4DD1 /* SupportVC.swift in Sources */,
@@ -186,16 +264,38 @@
 				328DB16F20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift in Sources */,
 				A1BC604F20442EB900392411 /* InnerShadowInUIView.swift in Sources */,
 				A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */,
+				328DB18A20472BE3005E4DD1 /* TabBarUIView.swift in Sources */,
 				A1BC604D20442BD000392411 /* RoundedUIButton.swift in Sources */,
 				A1BC605820446CDE00392411 /* JMStringMask.swift in Sources */,
+				328DB1772045B7BC005E4DD1 /* ShlagbaumTableViewCell.swift in Sources */,
 				32147F9E203DA7E900DD2E23 /* ShlagbaumTableVC.swift in Sources */,
+				328DB17120458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift in Sources */,
 				32147F9A203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift in Sources */,
+				328DB17E2046E7EA005E4DD1 /* TabBarVC.swift in Sources */,
+				328DB18C20472DEA005E4DD1 /* GradientUIView.swift in Sources */,
+				328DB1752045B439005E4DD1 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		328DB17A2046E766005E4DD1 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				328DB17B2046E766005E4DD1 /* Base */,
+			);
+			name = Settings.storyboard;
+			sourceTree = "<group>";
+		};
+		328DB17F2046EBC8005E4DD1 /* Shlagbaum.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				328DB1802046EBC8005E4DD1 /* Base */,
+			);
+			name = Shlagbaum.storyboard;
+			sourceTree = "<group>";
+		};
 		A14BB992203C758900F030C4 /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
