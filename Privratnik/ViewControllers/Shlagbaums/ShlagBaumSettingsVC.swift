@@ -36,6 +36,8 @@ class ShlagBaumSettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPresentation()
+        
+        hideKeyboardWhenTappedAround()
     }
     
     private func setupPresentation(){
