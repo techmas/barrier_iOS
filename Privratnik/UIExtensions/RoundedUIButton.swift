@@ -15,12 +15,34 @@ class RoundedUIButton: UIButton {
     
     var shadowAdded: Bool = true
     
+    override var isEnabled: Bool {didSet{
+        if !isEnabled{
+            self.backgroundColor = UIColor.darkGray
+        } else {
+            self.backgroundColor = UIColor.duskBlue
+        }
+        }}
+    
     @IBInspectable var cornerRadius: CGFloat = 21 {
         didSet {
             super.layoutSubviews()
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        if self.backgroundColor != UIColor.white {
+        
+        if !isEnabled{
+            self.backgroundColor = UIColor.darkGray
+        } else {
+            self.backgroundColor = UIColor.duskBlue
+            }
+        }
+        
     }
     
     override func draw(_ rect: CGRect)

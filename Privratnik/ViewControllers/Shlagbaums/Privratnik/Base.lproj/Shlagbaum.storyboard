@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -54,7 +56,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y6F-aA-qOX">
                                 <rect key="frame" x="13" y="70" width="349" height="597"/>
                                 <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="-10" maxY="0.0"/>
+                                <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="-10" maxY="0.0"/>
                                 <inset key="separatorInset" minX="800" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="145" id="qEy-3L-x89" customClass="ShlagbaumTableViewCell" customModule="Privratnik" customModuleProvider="target">
@@ -115,6 +117,9 @@
                                                                     <real key="value" value="21"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="cameraButtonPressed:" destination="qEy-3L-x89" eventType="touchUpInside" id="DxO-QG-5mf"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шлагбаум во дворе" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-HS-fFt">
                                                             <rect key="frame" x="78" y="11" width="262" height="21"/>
@@ -147,6 +152,9 @@
                                                                     <integer key="value" value="21"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
+                                                            <connections>
+                                                                <action selector="settingsButtonPressed:" destination="qEy-3L-x89" eventType="touchUpInside" id="6NK-9k-FJI"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -187,11 +195,17 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
+                                            <outlet property="cameraButton" destination="baD-Bd-CfB" id="lHN-GT-MNH"/>
+                                            <outlet property="cellRoundedUIView" destination="dhQ-rh-hUf" id="bDN-Ax-AOj"/>
                                             <outlet property="openButton" destination="knO-QU-pFN" id="bJL-lw-z9H"/>
                                             <outlet property="openButtonLeftHandConstraint" destination="HjN-9g-grB" id="kgf-D1-AN5"/>
                                             <outlet property="openButtonRightHandConstraint" destination="ZPf-PX-eyK" id="xs4-3q-efR"/>
+                                            <outlet property="settingsButton" destination="lrC-IH-Ilz" id="ezE-Lq-rhk"/>
                                             <outlet property="settingsButtonLeftHandConstraint" destination="wj5-uO-aLx" id="L3R-SY-XGe"/>
                                             <outlet property="settingsButtonRightHandConstraint" destination="c36-z5-U9K" id="COa-Qt-cwK"/>
+                                            <outlet property="shlagbaumAdressUILabel" destination="Pcb-OV-rb8" id="8TB-sY-UHe"/>
+                                            <outlet property="shlagbaumImageUIImage" destination="ogd-Ez-eN4" id="8YO-As-pb7"/>
+                                            <outlet property="shlagbaumName" destination="5m9-HS-fFt" id="EHb-io-Ldj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -216,6 +230,7 @@
                     <navigationItem key="navigationItem" id="x9M-s0-Ekr"/>
                     <connections>
                         <outlet property="tableView" destination="y6F-aA-qOX" id="GT4-64-g1o"/>
+                        <segue destination="afL-nP-QHm" kind="show" identifier="shlagbaumSettings" id="1qw-Ak-q8z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tGN-Ai-Wo7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,30 +296,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvP-OL-5NA" customClass="RoundedUIView" customModule="Privratnik" customModuleProvider="target">
                                 <rect key="frame" x="13" y="83" width="349" height="447"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Название шлагбаума" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPP-dz-oPW">
-                                        <rect key="frame" x="55" y="39" width="222" height="23"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.49651313266871167" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название шлагбаума" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPP-dz-oPW" customClass="RoundedUITextField" customModule="Privratnik" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="29" width="239" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="cOO-Yu-c4l"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderEnabled" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5y-9q-vmk">
-                                        <rect key="frame" x="282" y="34.5" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="AIz-A4-jUC"/>
-                                            <constraint firstAttribute="height" constant="32" id="lLS-6k-cMQ"/>
-                                        </constraints>
-                                        <state key="normal" image="edit1"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-p4-ypJ">
-                                        <rect key="frame" x="109" y="97" width="131" height="131"/>
+                                        <rect key="frame" x="109" y="91" width="131" height="131"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="131" id="4kD-nK-Dhg"/>
                                             <constraint firstAttribute="width" constant="131" id="MXz-6q-lJG"/>
+                                            <constraint firstAttribute="width" secondItem="Vdw-p4-ypJ" secondAttribute="height" multiplier="1:1" id="dJJ-Dd-U6Y"/>
                                         </constraints>
                                         <state key="normal" image="addphoto"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона открытия шлагбаума" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5N-eO-CCa">
-                                        <rect key="frame" x="73" y="263" width="203" height="43"/>
+                                        <rect key="frame" x="73" y="257" width="203" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="W9Z-6Y-4SP"/>
                                             <constraint firstAttribute="width" constant="203" id="qLz-NZ-Otc"/>
@@ -313,8 +333,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="(903) ___-__-__" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zY8-MT-g8d" customClass="RoundedUITextFieldMasked" customModule="Privratnik" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="319" width="275" height="42"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="(903) ___-__-__" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zY8-MT-g8d" customClass="RoundedUITextFieldMasked" customModule="Privratnik" customModuleProvider="target">
+                                        <rect key="frame" x="37" y="313" width="275" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="275" id="HtM-dj-iIP"/>
                                             <constraint firstAttribute="height" constant="42" id="nbY-79-VVN"/>
@@ -331,41 +351,43 @@
                                                 <real key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="+7(000) 000-00-00"/>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="borderEnabled" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="0.31266343890493825" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="YaO-ED-Eb0" id="Nki-Ty-qkC"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Название шлагбаума" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-bC-ple">
-                                        <rect key="frame" x="55" y="391" width="222" height="23"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.49651313270000003" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес шлагбаума" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-bC-ple" customClass="RoundedUITextField" customModule="Privratnik" customModuleProvider="target">
+                                        <rect key="frame" x="55" y="385" width="239" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Vng-Pl-Aml"/>
+                                        </constraints>
+                                        <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-rM-2hE">
-                                        <rect key="frame" x="282" y="387" width="32" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="Lho-Zk-WCT"/>
-                                            <constraint firstAttribute="height" constant="32" id="xAX-Ep-2fb"/>
-                                        </constraints>
-                                        <state key="normal" image="edit1"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="8ff-bC-ple" firstAttribute="leading" secondItem="DvP-OL-5NA" secondAttribute="leading" constant="55" id="1KE-dI-etJ"/>
-                                    <constraint firstItem="c5y-9q-vmk" firstAttribute="centerY" secondItem="YPP-dz-oPW" secondAttribute="centerY" id="30L-we-0cl"/>
-                                    <constraint firstItem="Uhs-rM-2hE" firstAttribute="leading" secondItem="8ff-bC-ple" secondAttribute="trailing" constant="5" id="46c-T6-lDU"/>
-                                    <constraint firstItem="c5y-9q-vmk" firstAttribute="leading" secondItem="YPP-dz-oPW" secondAttribute="trailing" constant="5" id="82c-te-nq5"/>
-                                    <constraint firstAttribute="trailing" secondItem="Uhs-rM-2hE" secondAttribute="trailing" constant="35" id="8k6-dO-qHn"/>
                                     <constraint firstItem="Vdw-p4-ypJ" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="8kN-iY-1pq"/>
-                                    <constraint firstItem="YPP-dz-oPW" firstAttribute="top" secondItem="DvP-OL-5NA" secondAttribute="top" constant="39" id="bBp-ia-eZM"/>
+                                    <constraint firstItem="YPP-dz-oPW" firstAttribute="top" secondItem="DvP-OL-5NA" secondAttribute="top" constant="29" id="bBp-ia-eZM"/>
                                     <constraint firstItem="e5N-eO-CCa" firstAttribute="top" secondItem="Vdw-p4-ypJ" secondAttribute="bottom" constant="35" id="esg-Ds-6re"/>
                                     <constraint firstItem="YPP-dz-oPW" firstAttribute="leading" secondItem="DvP-OL-5NA" secondAttribute="leading" constant="55" id="gN6-dY-sDV"/>
-                                    <constraint firstItem="Vdw-p4-ypJ" firstAttribute="top" secondItem="YPP-dz-oPW" secondAttribute="bottom" constant="35" id="k3R-Yd-OC9"/>
+                                    <constraint firstItem="YPP-dz-oPW" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="ix0-g4-KQi"/>
+                                    <constraint firstItem="Vdw-p4-ypJ" firstAttribute="top" secondItem="YPP-dz-oPW" secondAttribute="bottom" constant="20" id="k3R-Yd-OC9"/>
                                     <constraint firstItem="e5N-eO-CCa" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="kWx-eu-QVe"/>
-                                    <constraint firstItem="Uhs-rM-2hE" firstAttribute="centerY" secondItem="8ff-bC-ple" secondAttribute="centerY" id="n9N-yG-NgH"/>
+                                    <constraint firstItem="8ff-bC-ple" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="qC2-aE-YLp"/>
                                     <constraint firstItem="8ff-bC-ple" firstAttribute="top" secondItem="zY8-MT-g8d" secondAttribute="bottom" constant="30" id="rgk-Qe-seg"/>
                                     <constraint firstItem="zY8-MT-g8d" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="sCX-4l-nQ5"/>
+                                    <constraint firstAttribute="bottom" secondItem="8ff-bC-ple" secondAttribute="bottom" constant="20" id="sOO-00-ijT"/>
                                     <constraint firstItem="zY8-MT-g8d" firstAttribute="top" secondItem="e5N-eO-CCa" secondAttribute="bottom" constant="13" id="v9Q-e1-Zlt"/>
-                                    <constraint firstAttribute="trailing" secondItem="c5y-9q-vmk" secondAttribute="trailing" constant="35" id="yUf-T4-b8V"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -373,7 +395,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-lM-QTS" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-lM-QTS" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
                                 <rect key="frame" x="108.5" y="543" width="158" height="42"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -390,6 +412,9 @@
                                         <integer key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="YaO-ED-Eb0" eventType="touchUpInside" id="Dj7-FA-4M2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91372549020000005" green="0.91372549020000005" blue="0.91372549020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -401,21 +426,220 @@
                             <constraint firstItem="ucQ-Ul-jd3" firstAttribute="trailing" secondItem="DvP-OL-5NA" secondAttribute="trailing" constant="13" id="Pbz-Rg-pMX"/>
                             <constraint firstItem="3zc-lM-QTS" firstAttribute="centerX" secondItem="jnp-jx-8yF" secondAttribute="centerX" id="biR-K9-wKP"/>
                             <constraint firstItem="ucQ-Ul-jd3" firstAttribute="trailing" secondItem="s3x-Fg-nl6" secondAttribute="trailing" id="clr-y6-NyP"/>
-                            <constraint firstItem="ucQ-Ul-jd3" firstAttribute="bottom" secondItem="3zc-lM-QTS" secondAttribute="bottom" constant="82" id="daW-Ym-Elw"/>
                             <constraint firstItem="s3x-Fg-nl6" firstAttribute="leading" secondItem="ucQ-Ul-jd3" secondAttribute="leading" id="oSl-at-hJ9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ucQ-Ul-jd3"/>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="3zc-lM-QTS" id="bUj-Kq-gmN"/>
+                        <outlet property="shlagbaumAdressTextField" destination="8ff-bC-ple" id="xbZ-f7-RE7"/>
+                        <outlet property="shlagbaumNameTextField" destination="YPP-dz-oPW" id="qNB-bu-cLO"/>
+                        <outlet property="shlagbaumNumberTextField" destination="zY8-MT-g8d" id="Ipm-XT-jJB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDS-VQ-ASI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2439" y="51"/>
+            <point key="canvasLocation" x="2575" y="-287"/>
+        </scene>
+        <!--Shlag Baum SettingsVC-->
+        <scene sceneID="cuv-SG-AR8">
+            <objects>
+                <viewController id="afL-nP-QHm" customClass="ShlagBaumSettingsVC" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E1K-8M-ri0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ie-Gm-r9Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шлагбаум" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdn-9i-ZfO">
+                                        <rect key="frame" x="146.5" y="34.5" width="82.5" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="JGc-gU-48l"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4A-m7-Owu">
+                                        <rect key="frame" x="14" y="34.5" width="62" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-10" maxY="0.0"/>
+                                        <state key="normal" title="Назад" image="back"/>
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="Gun-1g-UGs"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-xS-Q8d">
+                                        <rect key="frame" x="281" y="28.5" width="80" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Изменить"/>
+                                        <connections>
+                                            <action selector="editButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="t50-W4-NYU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="zdn-9i-ZfO" firstAttribute="centerX" secondItem="4ie-Gm-r9Z" secondAttribute="centerX" id="8o7-cP-a78"/>
+                                    <constraint firstAttribute="height" constant="70" id="MaW-UX-e1f"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q4A-m7-Owu" secondAttribute="bottom" constant="14.5" id="PBA-5Q-kvb"/>
+                                    <constraint firstAttribute="bottom" secondItem="zdn-9i-ZfO" secondAttribute="bottom" constant="14.5" id="RD3-Zs-X4J"/>
+                                    <constraint firstItem="CFJ-xS-Q8d" firstAttribute="centerY" secondItem="zdn-9i-ZfO" secondAttribute="centerY" id="V8G-BM-xs9"/>
+                                    <constraint firstAttribute="trailing" secondItem="CFJ-xS-Q8d" secondAttribute="trailing" constant="14" id="Yky-0b-N1z"/>
+                                    <constraint firstItem="Q4A-m7-Owu" firstAttribute="leading" secondItem="4ie-Gm-r9Z" secondAttribute="leading" constant="14" id="cf9-O9-bkX"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3u-eb-MAK" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
+                                <rect key="frame" x="108.5" y="360.5" width="158" height="42"/>
+                                <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="FBW-ko-0Gq"/>
+                                    <constraint firstAttribute="width" constant="158" id="K0F-o3-4e1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                <state key="normal" title="Модернизация">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vCD-BG-wSt">
+                                <rect key="frame" x="130" y="87.5" width="240" height="89"/>
+                                <subviews>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Название шлагбаума" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agU-Fh-xKg">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="42"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="IO7-2H-cgF"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Адрес шлагбаума" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="67z-ec-cWf">
+                                        <rect key="frame" x="0.0" y="47" width="240" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="0Ek-xN-GyZ"/>
+                                        </constraints>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RU4-0c-WGb">
+                                <rect key="frame" x="18" y="88" width="88" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="7KV-ak-DEJ"/>
+                                    <constraint firstAttribute="height" constant="88" id="gRz-wH-fsE"/>
+                                </constraints>
+                                <state key="normal" image="editphoto"/>
+                                <connections>
+                                    <action selector="shlagbaumPhotoButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="Jxt-fa-uGu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Открывать когда рядом" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Moq-n3-xF4">
+                                <rect key="frame" x="18" y="215" width="191" height="63"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xhr-0Z-5jD">
+                                <rect key="frame" x="308" y="231" width="51" height="31"/>
+                                <color key="onTintColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoX-eM-sQ7">
+                                <rect key="frame" x="113" y="608" width="149" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Удалить шлагбаум">
+                                    <color key="titleColor" red="0.59999999999999998" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteShlagBaumButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="8Kt-gt-YLJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee4-y1-ucE">
+                                <rect key="frame" x="97" y="298" width="205" height="50.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="205" id="hqZ-j4-Eyw"/>
+                                </constraints>
+                                <string key="text">На шлагбауме установлено
+устаревшее оборудование,
+закажите его модернизацию</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.70980392156862748" green="0.54509803921568623" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attention" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-Ga-Ee0">
+                                <rect key="frame" x="68" y="312" width="23" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="gxp-1h-w3d"/>
+                                    <constraint firstAttribute="width" constant="23" id="zou-uh-NTb"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiE-YO-vNq" userLabel="LineView">
+                                <rect key="frame" x="54" y="203" width="267" height="1"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.097680214720000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="ete-Oh-UWO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xGB-tE-DX9" firstAttribute="trailing" secondItem="xhr-0Z-5jD" secondAttribute="trailing" constant="18" id="5K2-Yr-qpu"/>
+                            <constraint firstItem="xGB-tE-DX9" firstAttribute="trailing" secondItem="vCD-BG-wSt" secondAttribute="trailing" constant="5" id="6JD-wF-53B"/>
+                            <constraint firstItem="xhr-0Z-5jD" firstAttribute="top" secondItem="RiE-YO-vNq" secondAttribute="bottom" constant="27" id="C8o-kL-IcK"/>
+                            <constraint firstItem="RU4-0c-WGb" firstAttribute="top" secondItem="4ie-Gm-r9Z" secondAttribute="bottom" constant="18" id="Cwr-eH-SN0"/>
+                            <constraint firstItem="4ie-Gm-r9Z" firstAttribute="top" secondItem="E1K-8M-ri0" secondAttribute="top" id="HfH-4H-GuK"/>
+                            <constraint firstItem="xhr-0Z-5jD" firstAttribute="centerY" secondItem="Moq-n3-xF4" secondAttribute="centerY" id="I2V-3b-U8b"/>
+                            <constraint firstItem="vCD-BG-wSt" firstAttribute="leading" secondItem="RU4-0c-WGb" secondAttribute="trailing" constant="24" id="Jit-XU-zo8"/>
+                            <constraint firstItem="vCD-BG-wSt" firstAttribute="centerY" secondItem="RU4-0c-WGb" secondAttribute="centerY" id="KG0-YQ-rZh"/>
+                            <constraint firstItem="ee4-y1-ucE" firstAttribute="top" secondItem="Moq-n3-xF4" secondAttribute="bottom" constant="20" id="KaZ-WP-pM7"/>
+                            <constraint firstAttribute="bottom" secondItem="uoX-eM-sQ7" secondAttribute="bottom" constant="26" id="MAo-10-lTw"/>
+                            <constraint firstItem="K3u-eb-MAK" firstAttribute="top" secondItem="ee4-y1-ucE" secondAttribute="bottom" constant="12" id="Oty-xA-ZnR"/>
+                            <constraint firstItem="4ie-Gm-r9Z" firstAttribute="leading" secondItem="xGB-tE-DX9" secondAttribute="leading" id="P1e-8m-XEA"/>
+                            <constraint firstItem="K3u-eb-MAK" firstAttribute="centerX" secondItem="E1K-8M-ri0" secondAttribute="centerX" id="Sqc-CH-jFo"/>
+                            <constraint firstItem="xGB-tE-DX9" firstAttribute="trailing" secondItem="4ie-Gm-r9Z" secondAttribute="trailing" id="Xqc-a2-4TC"/>
+                            <constraint firstItem="RiE-YO-vNq" firstAttribute="leading" secondItem="E1K-8M-ri0" secondAttribute="leadingMargin" constant="38" id="bbZ-dR-6br"/>
+                            <constraint firstItem="RU4-0c-WGb" firstAttribute="leading" secondItem="xGB-tE-DX9" secondAttribute="leading" constant="18" id="irN-uA-LIf"/>
+                            <constraint firstItem="uoX-eM-sQ7" firstAttribute="centerX" secondItem="E1K-8M-ri0" secondAttribute="centerX" id="kGU-Yx-EuA"/>
+                            <constraint firstItem="Moq-n3-xF4" firstAttribute="top" secondItem="RU4-0c-WGb" secondAttribute="bottom" constant="39" id="m3P-xp-3L0"/>
+                            <constraint firstItem="iKM-Ga-Ee0" firstAttribute="centerY" secondItem="ee4-y1-ucE" secondAttribute="centerY" id="mrT-4V-8A0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RiE-YO-vNq" secondAttribute="trailing" constant="38" id="tqp-Nd-l72"/>
+                            <constraint firstItem="Moq-n3-xF4" firstAttribute="leading" secondItem="xGB-tE-DX9" secondAttribute="leading" constant="18" id="vXX-Ou-CqV"/>
+                            <constraint firstItem="RiE-YO-vNq" firstAttribute="centerX" secondItem="E1K-8M-ri0" secondAttribute="centerX" id="wQF-TM-SUZ"/>
+                            <constraint firstItem="ee4-y1-ucE" firstAttribute="leading" secondItem="iKM-Ga-Ee0" secondAttribute="trailing" constant="6" id="wdV-EW-1wt"/>
+                            <constraint firstItem="ee4-y1-ucE" firstAttribute="centerX" secondItem="E1K-8M-ri0" secondAttribute="centerX" constant="12" id="xZs-Mo-ygN"/>
+                            <constraint firstItem="RiE-YO-vNq" firstAttribute="top" secondItem="RU4-0c-WGb" secondAttribute="bottom" constant="27" id="z2n-5E-rTr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xGB-tE-DX9"/>
+                    </view>
+                    <connections>
+                        <outlet property="editButton" destination="CFJ-xS-Q8d" id="52S-PN-SY0"/>
+                        <outlet property="oldShlagBaumModernizationButton" destination="K3u-eb-MAK" id="ks6-oZ-epv"/>
+                        <outlet property="oldShlagbaumDescriptionLabel" destination="ee4-y1-ucE" id="ttS-7C-oOF"/>
+                        <outlet property="oldShlagbaumImage" destination="iKM-Ga-Ee0" id="ve0-3y-jzi"/>
+                        <outlet property="shlagbaumAdressTextField" destination="67z-ec-cWf" id="Jqc-TC-zGt"/>
+                        <outlet property="shlagbaumNameTextField" destination="agU-Fh-xKg" id="CdA-8b-vW1"/>
+                        <outlet property="shlagbaumPhotoButton" destination="RU4-0c-WGb" id="uA7-Up-4UG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YhF-1T-TfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2575" y="385"/>
         </scene>
     </scenes>
     <resources>
         <image name="addphoto" width="131" height="131"/>
+        <image name="attention" width="23" height="23"/>
         <image name="back" width="12" height="21"/>
-        <image name="edit1" width="19" height="19"/>
+        <image name="editphoto" width="88" height="88"/>
         <image name="plus" width="22" height="22"/>
         <image name="setting1" width="24" height="24"/>
         <image name="shlag1" width="600" height="600"/>

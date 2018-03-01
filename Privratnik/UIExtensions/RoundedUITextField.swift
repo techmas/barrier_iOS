@@ -12,33 +12,55 @@ import UIKit
 @IBDesignable
 class RoundedUITextField: UITextField {
     
+    @IBInspectable var borderEnabled:Bool = false {didSet{updatePresentation()}}
+    
+    
     @IBInspectable var masksToBounds:Bool = true {didSet{
         updatePresentation()
         }}
-    
+    /*
     @IBInspectable var innerShadowEnabled:Bool = false {didSet{
         updatePresentation()
         }}
-    
+    */
     @IBInspectable var cornerRadius:CGFloat = 21{didSet{
         updatePresentation()
         }}
     
+    @IBInspectable var newBackgroundColor:UIColor = UIColor.white{didSet{
+        updatePresentation()
+        }}
+    
+    @IBInspectable var borderColor:UIColor = UIColor.darkGray{didSet{
+        updatePresentation()
+        }}
+    /*
     @IBInspectable var shadowRadius:CGFloat = 1{didSet{
         updatePresentation()
         }}
-    
-    @IBInspectable var borderWidth:CGFloat = 0{didSet{
+    */
+    @IBInspectable var borderWidth:CGFloat = 1{didSet{
         updatePresentation()
         }}
-    
     func updatePresentation(){
         self.layer.masksToBounds = masksToBounds
         self.layer.cornerRadius = cornerRadius
-        if innerShadowEnabled {setupShadow()}
+        //if innerShadowEnabled {setupShadow()}
         self.borderStyle = .none
-        self.backgroundColor = UIColor.white
+        self.backgroundColor = newBackgroundColor
+        
+        if borderEnabled {
+            self.layer.borderWidth = borderWidth
+            self.layer.borderColor = borderColor.cgColor
+            
+        } else {
+            self.layer.borderWidth = 0
+        }
+        
     }
+    
+    
+    
     
     func setupShadow(){
         //self.addShadow(to: [.top], radius: shadowRadius)
