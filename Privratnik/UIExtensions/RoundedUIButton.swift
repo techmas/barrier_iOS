@@ -34,15 +34,6 @@ class RoundedUIButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        if self.backgroundColor != UIColor.white {
-        
-        if !isEnabled{
-            self.backgroundColor = UIColor.darkGray
-        } else {
-            self.backgroundColor = UIColor.duskBlue
-            }
-        }
-        
     }
     
     override func draw(_ rect: CGRect)

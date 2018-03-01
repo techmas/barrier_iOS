@@ -71,10 +71,10 @@ class ShlagBaumSettingsVC: UIViewController {
             editButton.setTitle("Готово", for: .normal)
             shlagbaumNameTextField.borderStyle = .roundedRect
             shlagbaumNameTextField.isUserInteractionEnabled = true
-            shlagbaumNameTextField.textColor = UIColor.darkGray
+            shlagbaumNameTextField.textColor = UIColor.duskBlue
             shlagbaumAdressTextField.borderStyle = .roundedRect
             shlagbaumAdressTextField.isUserInteractionEnabled = true
-            shlagbaumAdressTextField.textColor = UIColor.darkGray
+            shlagbaumAdressTextField.textColor = UIColor.duskBlue
             shlagbaumPhotoButton.isUserInteractionEnabled = true
             
             
@@ -85,10 +85,10 @@ class ShlagBaumSettingsVC: UIViewController {
             editButton.setTitle("Изменить", for: .normal)
             shlagbaumNameTextField.borderStyle = .none
             shlagbaumNameTextField.isUserInteractionEnabled = false
-            shlagbaumNameTextField.textColor = UIColor.duskBlue
+            shlagbaumNameTextField.textColor = UIColor.darkGray
             shlagbaumAdressTextField.borderStyle = .none
             shlagbaumAdressTextField.isUserInteractionEnabled = false
-            shlagbaumAdressTextField.textColor = UIColor.duskBlue
+            shlagbaumAdressTextField.textColor = UIColor.darkGray
             shlagbaumPhotoButton.isUserInteractionEnabled = false
             
             

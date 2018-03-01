@@ -25,133 +25,89 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Nk9-M0-NxN">
-                                                <rect key="frame" x="0.0" y="11" width="75" height="46"/>
+                                                <rect key="frame" x="0.0" y="18" width="75" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-aP-m74">
-                                                        <rect key="frame" x="21.5" y="0.0" width="32" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="VJE-Xs-731"/>
-                                                            <constraint firstAttribute="height" constant="32" id="b44-m7-eLv"/>
-                                                        </constraints>
-                                                        <state key="normal" image="open2"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-aP-m74" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
+                                                        <rect key="frame" x="2" y="0.0" width="71" height="32"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                                        <state key="normal" title="Открыть" image="open1">
+                                                            <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="open2">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="BarButtonPressed:" destination="wYx-B9-Mgm" eventType="touchUpInside" id="9FS-gy-f7g"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Открыть" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRJ-WY-cbL">
-                                                        <rect key="frame" x="16.5" y="34" width="42" height="12"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="dvU-e6-caI"/>
-                                                            <constraint firstAttribute="height" constant="12" id="m9b-JW-UjZ"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                        <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="mTO-Og-EYU">
-                                                <rect key="frame" x="75" y="11" width="75" height="46"/>
+                                                <rect key="frame" x="75" y="18" width="75" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-cN-jfd">
-                                                        <rect key="frame" x="21.5" y="0.0" width="32" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="1Rh-45-M6y"/>
-                                                            <constraint firstAttribute="height" constant="32" id="5Me-mi-cbz"/>
-                                                        </constraints>
-                                                        <state key="normal" image="cam1"/>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-cN-jfd" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
+                                                        <state key="normal" title="Камеры" image="cam1">
+                                                            <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="BarButtonPressed:" destination="wYx-B9-Mgm" eventType="touchUpInside" id="2Nj-4n-0q8"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Камеры" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwb-9u-7t2">
-                                                        <rect key="frame" x="16.5" y="34" width="42" height="12"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="12" id="SM6-Wj-QNq"/>
-                                                            <constraint firstAttribute="width" constant="42" id="hje-X5-xV3"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="cNe-bW-Ju8">
-                                                <rect key="frame" x="150" y="11" width="75" height="46"/>
+                                                <rect key="frame" x="150" y="18" width="75" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiV-5m-L7B">
-                                                        <rect key="frame" x="21.5" y="0.0" width="32" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="32" id="Flu-Ta-F7h"/>
-                                                            <constraint firstAttribute="width" constant="32" id="s7R-9i-EDF"/>
-                                                        </constraints>
-                                                        <state key="normal" image="maps1"/>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiV-5m-L7B" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
+                                                        <state key="normal" title="На карте" image="maps1">
+                                                            <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="BarButtonPressed:" destination="wYx-B9-Mgm" eventType="touchUpInside" id="EFy-US-yU6"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На карте" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSP-MU-qPP">
-                                                        <rect key="frame" x="16.5" y="34" width="42" height="12"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="juO-0W-I0c"/>
-                                                            <constraint firstAttribute="height" constant="12" id="kOS-Vs-gRz"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Hj1-T9-9HA">
-                                                <rect key="frame" x="225" y="11" width="75" height="46"/>
+                                                <rect key="frame" x="225" y="18" width="75" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npT-vl-A4m">
-                                                        <rect key="frame" x="21.5" y="0.0" width="32" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="234-af-VL6"/>
-                                                            <constraint firstAttribute="height" constant="32" id="dgT-Gb-RJ3"/>
-                                                        </constraints>
-                                                        <state key="normal" image="wallet1"/>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npT-vl-A4m" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
+                                                        <state key="normal" title="Кошелёк" image="wallet1">
+                                                            <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="BarButtonPressed:" destination="wYx-B9-Mgm" eventType="touchUpInside" id="ZdX-Xo-MLb"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кошелек" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDB-FE-eQU">
-                                                        <rect key="frame" x="16.5" y="34" width="42" height="12"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="42" id="2FR-rA-HBZ"/>
-                                                            <constraint firstAttribute="height" constant="12" id="NSk-mJ-LfF"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="s67-MB-SJ7">
-                                                <rect key="frame" x="300" y="11" width="75" height="46"/>
+                                                <rect key="frame" x="300" y="18" width="75" height="32"/>
                                                 <subviews>
-                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-Jv-PeZ">
-                                                        <rect key="frame" x="21.5" y="0.0" width="32" height="32"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="32" id="DgB-J1-SNj"/>
-                                                            <constraint firstAttribute="height" constant="32" id="dGL-bU-2qm"/>
-                                                        </constraints>
-                                                        <state key="normal" image="settings1"/>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7zJ-Jv-PeZ" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
+                                                        <state key="normal" title="Настройки" image="settings1">
+                                                            <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
+                                                        <state key="selected" image="settings2">
+                                                            <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        </state>
                                                         <connections>
                                                             <action selector="BarButtonPressed:" destination="wYx-B9-Mgm" eventType="touchUpInside" id="cNs-Ib-cdg"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="118-my-4qg">
-                                                        <rect key="frame" x="16.5" y="34" width="42" height="12"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="12" id="Yck-hn-FN7"/>
-                                                            <constraint firstAttribute="width" constant="42" id="aj9-qn-yUa"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -237,8 +193,10 @@
     <resources>
         <image name="cam1" width="32" height="32"/>
         <image name="maps1" width="32" height="32"/>
+        <image name="open1" width="32" height="32"/>
         <image name="open2" width="32" height="32"/>
         <image name="settings1" width="32" height="32"/>
+        <image name="settings2" width="32" height="32"/>
         <image name="wallet1" width="32" height="32"/>
     </resources>
 </document>

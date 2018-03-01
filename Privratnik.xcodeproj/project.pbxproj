@@ -25,6 +25,7 @@
 		328DB18E20473426005E4DD1 /* ShlagBaumSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB18D20473426005E4DD1 /* ShlagBaumSettingsVC.swift */; };
 		328DB19020480337005E4DD1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB18F20480337005E4DD1 /* Model.swift */; };
 		328DB19220480959005E4DD1 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB19120480959005E4DD1 /* UIColor+Additions.swift */; };
+		328DB1942048545B005E4DD1 /* TabBarUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB1932048545B005E4DD1 /* TabBarUIButton.swift */; };
 		A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB98E203C758900F030C4 /* AppDelegate.swift */; };
 		A14BB994203C758900F030C4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Login.storyboard */; };
 		A14BB996203C758900F030C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BB995203C758900F030C4 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		328DB18D20473426005E4DD1 /* ShlagBaumSettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShlagBaumSettingsVC.swift; sourceTree = "<group>"; };
 		328DB18F20480337005E4DD1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		328DB19120480959005E4DD1 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		328DB1932048545B005E4DD1 /* TabBarUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUIButton.swift; sourceTree = "<group>"; };
 		A14BB98B203C758900F030C4 /* Privratnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privratnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14BB98E203C758900F030C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A14BB993203C758900F030C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */,
 				328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */,
 				328DB17020458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift */,
+				328DB1932048545B005E4DD1 /* TabBarUIButton.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				328DB17E2046E7EA005E4DD1 /* TabBarVC.swift in Sources */,
 				328DB18E20473426005E4DD1 /* ShlagBaumSettingsVC.swift in Sources */,
 				328DB18C20472DEA005E4DD1 /* GradientUIView.swift in Sources */,
+				328DB1942048545B005E4DD1 /* TabBarUIButton.swift in Sources */,
 				328DB1752045B439005E4DD1 /* SettingsVC.swift in Sources */,
 				328DB19220480959005E4DD1 /* UIColor+Additions.swift in Sources */,
 			);

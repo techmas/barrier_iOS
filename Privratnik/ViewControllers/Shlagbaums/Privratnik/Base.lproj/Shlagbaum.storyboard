@@ -397,7 +397,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-lM-QTS" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
                                 <rect key="frame" x="108.5" y="543" width="158" height="42"/>
-                                <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="DGz-y9-Cn3"/>
                                     <constraint firstAttribute="height" constant="42" id="ulf-dF-LwP"/>

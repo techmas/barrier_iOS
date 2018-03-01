@@ -124,6 +124,21 @@ extension LoginEnterPhoneNumberVC: UITextFieldDelegate {
             let lengthToReplace = range.length
             let newLength = startingLength + lengthToAdd - lengthToReplace
             
+            // avoid 1st entered number 7 and 8
+            
+            /*
+            if startingLength == 0 {
+                print (string)
+                if string == "7" {
+                    return false
+                }
+                
+                if string == "8"{
+                    return false
+                }
+            }
+             */
+            
             getSmsButton.isHidden = !(newLength >= characterCountLimit)
             
             if newLength < startingLength {
