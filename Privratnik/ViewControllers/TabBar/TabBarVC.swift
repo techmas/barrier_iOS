@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol UserCanInitiateLogout {
+    func userInitiatedLogoutProcedure()
+}
+
 class TabBarVC: UIViewController {
 
     @IBOutlet weak var contentView: UIView!
@@ -29,6 +33,10 @@ class TabBarVC: UIViewController {
         vc.view.frame = contentView.bounds
         contentView.addSubview(vc.view)
         vc.didMove(toParentViewController: self)
+        
+        if let targetController = vc as? SettingsVC {
+            targetController.delegate = self
+        }
     }
     var shlagbaumViewController: UIViewController!
     var camerasViewController: UIViewController!
@@ -66,4 +74,10 @@ class TabBarVC: UIViewController {
         viewControllers = [shlagbaumViewController, camerasViewController, mapViewController, walletViewController, settingsViewController ]
     }
 
+}
+
+extension TabBarVC:UserCanInitiateLogout{
+    func userInitiatedLogoutProcedure() {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
 }

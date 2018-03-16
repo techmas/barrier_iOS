@@ -17,6 +17,7 @@ class SettingsVC: UIViewController {
         isRightHandOrientation = rightHandOrientstionUISwitch.isOn
     }
     
+   var delegate:UserCanInitiateLogout?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,12 @@ class SettingsVC: UIViewController {
     }
 
     @IBAction func logOutButtonPressed(_ sender: Any) {
+        // to remake
         UserAPI.shared.removeTokenAndPhoneNumber()
+        
+        delegate?.userInitiatedLogoutProcedure()
+        
+        
     }
     
 
