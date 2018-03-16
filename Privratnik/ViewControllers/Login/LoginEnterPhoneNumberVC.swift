@@ -9,21 +9,19 @@
 import UIKit
 import AudioToolbox
 
+
 class LoginEnterPhoneNumberVC: UIViewController {
 
     var screenState:LoginScreenStates = .enteringPhoneNumber {didSet{setScreenState()}}
     var timer:Timer?
-    var seconds = 30
+    var seconds = 60
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var phoneNumberTextField: RoundedUITextFieldMasked!
     @IBOutlet weak var smsCodeTextField: RoundedUITextFieldMasked!
     @IBOutlet weak var getSmsButton: RoundedUIButton!
     @IBAction func getSmsButtonPressed(_ sender: Any) {
-        screenState = .enteringSmsCode
-        smsCodeButtonVisibilityTimerActivate()
-        getSmsButton.isHidden = true
-        phoneNumberTextField.endEditing(true)
+        getSMSCodeButtonPressed()
     }
     
     @IBOutlet weak var enterSmsCodeLabel: UILabel!
@@ -35,12 +33,20 @@ class LoginEnterPhoneNumberVC: UIViewController {
         screenState = .enteringPhoneNumber
         //addObserversForKeyboardAppearanceToMoveScrollView (vc: self, scrollView: scrollView)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if UserAPI.shared.getTokenAndPhoneNumber().token != nil {
+            self.performSegue(withIdentifier: "showMainScreen", sender: self)
+        }
+    }
    
     // Timer
     
     private func smsCodeButtonVisibilityTimerActivate(){
         // Логика повторной отправки смс-кода только через 30 секунд
-        seconds = 30
+        seconds = 60
         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
     }
     
@@ -56,8 +62,6 @@ class LoginEnterPhoneNumberVC: UIViewController {
         
     }
 
-    
-    // Timer
     
     private func setScreenState(){
         switch screenState {
@@ -77,20 +81,88 @@ class LoginEnterPhoneNumberVC: UIViewController {
     
     private func smsCodeEntered(){
         
-        let wrongCodeAlert = UIAlertController(title: "Ошибка", message: "Введенный код неверен. Попробуем еще раз?", preferredStyle: UIAlertControllerStyle.alert)
-        wrongCodeAlert.addAction(UIAlertAction(title: "Ок", style: UIAlertActionStyle.default,
-                                               handler: {action in self.smsCodeTextField.text = ""}))
+        guard var phoneNumber = phoneNumberTextField.unmaskedText else {return}
+        guard let smsCode = smsCodeTextField.text else {return}
         
-        // To Be removed
-        let alert = UIAlertController(title: "//Отладка", message: "Притворимся, что код верный?", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Да", style: UIAlertActionStyle.default, handler: {action in self.performSegue(withIdentifier: "showMainScreen", sender: self)}))
-        alert.addAction(UIAlertAction(title: "Нет", style: UIAlertActionStyle.cancel, handler: {action in
-            AudioServicesPlaySystemSound(1519) // Vibrate!
-            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
-            self.present(wrongCodeAlert, animated: true, completion: nil)
-        }))
-        self.present(alert, animated: true, completion: nil)
+        //print (smsCode)
         
+        
+        ProgressHUDManager.shared.showHUD()
+        NetworkAPI.submitSMSCode(phone: phoneNumber, SMSCode: smsCode) {
+            [weak self] (success, token, errorMessage) in
+            ProgressHUDManager.shared.hideHUD()
+            self?.handleServerResponseWithToken(success,token,errorMessage)
+        }
+    }
+    
+    private func handleServerResponseWithToken(_ success:Bool?,_ token: String?,_ errorMessage:String?){
+        
+        if errorMessage != nil {
+            displayAlert(errorMessage!)
+            return
+        }
+        
+        if success == nil {
+            displayAlert(GlobalConstants.AlertMessages.serverSideProblem)
+            return
+        }
+        
+        if !success! {
+            displayAlert(GlobalConstants.AlertMessages.serverSideProblem)
+            return
+        }
+        
+        guard let token = token else {
+            wrongCodeAlert("Введенный код неверен. Попробуем еще раз?")
+            return
+        }
+        
+        guard let phone = phoneNumberTextField.unmaskedText else {
+             displayAlert("Неверный номер телефона")
+            return
+        }
+        
+        if UserAPI.shared.setTokenAndPhoneNumber(token: token,phone: phone) {
+            self.performSegue(withIdentifier: "showMainScreen", sender: self)
+        } else {
+            displayAlert(GlobalConstants.AlertMessages.unknownError)
+        }
+        
+    }
+    
+    private func wrongCodeAlert(_ message:String){
+        AudioServicesPlaySystemSound(1519) // Vibrate!
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate)
+        displayAlert(message)
+    }
+    
+    private func getSMSCodeButtonPressed(){
+        
+        guard let phoneNumber = phoneNumberTextField.unmaskedText else {return}
+        
+        ProgressHUDManager.shared.showHUD()
+        NetworkAPI.requestSMSCode(phone: phoneNumber) {
+            [weak self] (success, errorMessage) in
+            ProgressHUDManager.shared.hideHUD()
+            self?.handleSmsCodeRequestResponse(success,errorMessage)
+        }
+       
+       
+    }
+    
+    private func handleSmsCodeRequestResponse(_ success:Bool?,_ errorMessage:String?){
+        if errorMessage != nil {
+            displayAlert(errorMessage!)
+            return
+        }
+        if success == nil {
+            displayAlert(GlobalConstants.AlertMessages.serverSideProblem)
+            return
+        }
+        screenState = .enteringSmsCode
+        smsCodeButtonVisibilityTimerActivate()
+        getSmsButton.isHidden = true
+        phoneNumberTextField.endEditing(true)
         
     }
     
@@ -104,16 +176,21 @@ extension LoginEnterPhoneNumberVC: UITextFieldDelegate {
         
         switch textFieldToChange {
         case smsCodeTextField:
-            // limit to 4 characters
-            let characterCountLimit = 4
+            // limit to 5 characters
+            let characterCountLimit = 5
             
             // We need to figure out how many characters would be in the string after the change happens
             let startingLength = textFieldToChange.text?.characters.count ?? 0
             let lengthToAdd = string.characters.count
             let lengthToReplace = range.length
             let newLength = startingLength + lengthToAdd - lengthToReplace
-            
-            if newLength == characterCountLimit {smsCodeEntered()}
+            print("длина строки \(newLength)")
+            if newLength == characterCountLimit {
+                DispatchQueue.main.async {
+                    self.smsCodeEntered()
+                }
+                
+            }
             
         case phoneNumberTextField:
             let characterCountLimit = 17

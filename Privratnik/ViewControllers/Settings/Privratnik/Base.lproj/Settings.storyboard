@@ -81,6 +81,9 @@
                                         <state key="normal" title="Выйти из аккаунта">
                                             <color key="titleColor" red="0.59999999999999998" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logOutButtonPressed:" destination="Kax-H5-lAk" eventType="touchUpInside" id="Ndx-bm-xjT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

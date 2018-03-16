@@ -32,6 +32,7 @@ class ShlagbaumTableViewCell: UITableViewCell {
             self.openButton.backgroundColor = UIColor.white
             self.openButton.isEnabled = true
         })
+        delegate?.didPressButtonWith(name: "open", indexPath: currentIndexPath)
     }
     
     @IBOutlet weak var settingsButton: UIButton!

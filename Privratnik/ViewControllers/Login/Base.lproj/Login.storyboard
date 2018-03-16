@@ -107,7 +107,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1234" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0C-Ga-uUE" customClass="RoundedUITextFieldMasked" customModule="Privratnik" customModuleProvider="target">
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="12345" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E0C-Ga-uUE" customClass="RoundedUITextFieldMasked" customModule="Privratnik" customModuleProvider="target">
                                         <rect key="frame" x="135" y="446" width="105" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="F99-5S-Aa0"/>
@@ -124,7 +124,7 @@
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="21"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="0000"/>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="maskString" value="00000"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="wHH-4B-2JY"/>

@@ -19,14 +19,20 @@ class AddShlagbaumVC: UIViewController {
     
     @IBOutlet weak var shlagbaumAdressTextField: RoundedUITextField!
     
+    @IBOutlet weak var shlagbaumPhotoButton: UIButton!
+    @IBAction func shlagBaumPhotoButtonPressed(_ sender: Any) {
+        importPhoto()
+    }
+    
+    
     @IBOutlet weak var addButton: RoundedUIButton!
     @IBAction func addButtonPressed(_ sender: Any) {
         FakeModel.shared.shlagbaumArray.append(Shlagbaum(name:shlagbaumNameTextField.text,
                                                          adress: shlagbaumAdressTextField.text,
                                                          phone: shlagbaumNumberTextField.text!,
-                                                         photo: nil,
+                                                         photo: shlagbaumPhotoButton.image(for: .normal),
                                                          photoURL: nil,
-                                                         needsUpdate: nil))
+                                                         needsUpdate: true))
         
         navigationController?.popViewController(animated: true)
         
@@ -42,6 +48,30 @@ class AddShlagbaumVC: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
+
+extension AddShlagbaumVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    private func importPhoto() {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        
+        self.present(imagePickerController, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            shlagbaumPhotoButton.setImage(image, for: .normal)
+            shlagbaumPhotoButton.imageView?.contentMode = .scaleAspectFill
+            picker.dismiss(animated: true, completion: nil)
+           
+        }
+    }
+}
+
 
 extension AddShlagbaumVC:UITextFieldDelegate{
     func textField(_ textFieldToChange: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

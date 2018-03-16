@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class TabBarUIView: UIView {
+@IBDesignable class TabBarUIView: UIView {
     
     @IBInspectable var uplined: Bool = true {didSet {updateBorder()}}
     @IBInspectable var borderWith: CGFloat = 1 {didSet {updateBorder()}}

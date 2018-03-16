@@ -22,9 +22,9 @@ class ShlagBaumSettingsVC: UIViewController {
     }
     @IBOutlet weak var shlagbaumNameTextField: UITextField!
     @IBOutlet weak var shlagbaumAdressTextField: UITextField!
-    @IBOutlet weak var shlagbaumPhotoButton: UIButton!
+    @IBOutlet weak var shlagbaumPhotoButton: RoundedUIButtonWithBorderWhenSelected!
     @IBAction func shlagbaumPhotoButtonPressed(_ sender: Any) {
-        
+        importPhoto()
     }
     @IBOutlet weak var oldShlagbaumDescriptionLabel: UILabel!
     @IBOutlet weak var oldShlagbaumImage: UIImageView!
@@ -36,6 +36,7 @@ class ShlagBaumSettingsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPresentation()
+        shlagbaumPhotoButton.imageView?.contentMode = .scaleAspectFill
         
         hideKeyboardWhenTappedAround()
     }
@@ -58,7 +59,9 @@ class ShlagBaumSettingsVC: UIViewController {
         // Заполнение полей данными
         shlagbaumNameTextField.text = selectedShlagbaum.name
         shlagbaumAdressTextField.text = selectedShlagbaum.adress
-        
+        if selectedShlagbaum.photo != nil {
+            shlagbaumPhotoButton.setImage(selectedShlagbaum.photo, for: .normal)
+        }
     }
     
     private func didPressEditButton(){
@@ -76,6 +79,8 @@ class ShlagBaumSettingsVC: UIViewController {
             shlagbaumAdressTextField.isUserInteractionEnabled = true
             shlagbaumAdressTextField.textColor = UIColor.duskBlue
             shlagbaumPhotoButton.isUserInteractionEnabled = true
+            shlagbaumPhotoButton.layer.borderWidth = 2
+            shlagbaumPhotoButton.layer.borderColor = UIColor.duskBlue.cgColor
             
             
         } else {
@@ -90,6 +95,7 @@ class ShlagBaumSettingsVC: UIViewController {
             shlagbaumAdressTextField.isUserInteractionEnabled = false
             shlagbaumAdressTextField.textColor = UIColor.darkGray
             shlagbaumPhotoButton.isUserInteractionEnabled = false
+            shlagbaumPhotoButton.layer.borderWidth = 0
             
             
             saveShlagBaumNewData()
@@ -118,7 +124,30 @@ class ShlagBaumSettingsVC: UIViewController {
         
         FakeModel.shared.shlagbaumArray[destinationIndex!].adress = shlagbaumAdressTextField.text
         FakeModel.shared.shlagbaumArray[destinationIndex!].name = shlagbaumNameTextField.text
+        FakeModel.shared.shlagbaumArray[destinationIndex!].photo = shlagbaumPhotoButton.image(for: .normal)
+        
     }
-
-
 }
+
+extension ShlagBaumSettingsVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    private func importPhoto() {
+        
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary
+        
+        self.present(imagePickerController, animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            shlagbaumPhotoButton.setImage(image, for: .normal)
+            picker.dismiss(animated: true, completion: nil)
+            
+        }
+    }
+}
+

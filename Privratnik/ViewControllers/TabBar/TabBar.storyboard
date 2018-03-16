@@ -28,7 +28,7 @@
                                                 <rect key="frame" x="0.0" y="18" width="75" height="32"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLu-aP-m74" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
-                                                        <rect key="frame" x="2" y="0.0" width="71" height="32"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                         <state key="normal" title="Открыть" image="open1">
                                                             <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,11 +46,11 @@
                                                 <rect key="frame" x="75" y="18" width="75" height="32"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-cN-jfd" customClass="TabBarUIButton" customModule="Privratnik" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="75" height="32"/>
+                                                        <rect key="frame" x="1.5" y="0.0" width="72" height="32"/>
                                                         <state key="normal" title="Камеры" image="cam1">
                                                             <color key="titleColor" red="0.27843137254901962" green="0.27843137254901962" blue="0.27843137254901962" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
-                                                        <state key="selected">
+                                                        <state key="selected" image="cam2">
                                                             <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
@@ -67,7 +67,7 @@
                                                         <state key="normal" title="На карте" image="maps1">
                                                             <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
-                                                        <state key="selected">
+                                                        <state key="selected" image="maps2">
                                                             <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
@@ -84,7 +84,7 @@
                                                         <state key="normal" title="Кошелёк" image="wallet1">
                                                             <color key="titleColor" red="0.2784313725" green="0.2784313725" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
-                                                        <state key="selected">
+                                                        <state key="selected" image="wallet2">
                                                             <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         </state>
                                                         <connections>
@@ -192,11 +192,14 @@
     </scenes>
     <resources>
         <image name="cam1" width="32" height="32"/>
+        <image name="cam2" width="32" height="32"/>
         <image name="maps1" width="32" height="32"/>
+        <image name="maps2" width="32" height="32"/>
         <image name="open1" width="32" height="32"/>
         <image name="open2" width="32" height="32"/>
         <image name="settings1" width="32" height="32"/>
         <image name="settings2" width="32" height="32"/>
         <image name="wallet1" width="32" height="32"/>
+        <image name="wallet2" width="32" height="32"/>
     </resources>
 </document>

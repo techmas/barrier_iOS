@@ -69,7 +69,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-rh-hUf" customClass="RoundedUIView" customModule="Privratnik" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="12" width="349" height="132.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shlag1" translatesAutoresizingMaskIntoConstraints="NO" id="ogd-Ez-eN4">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shlag1" translatesAutoresizingMaskIntoConstraints="NO" id="ogd-Ez-eN4">
                                                             <rect key="frame" x="14" y="11" width="55" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="55" id="gW3-4Y-ZB1"/>
@@ -82,7 +82,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knO-QU-pFN" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knO-QU-pFN" customClass="RoundedUIButtonWithProgress" customModule="Privratnik" customModuleProvider="target">
                                                             <rect key="frame" x="14" y="76" width="120" height="42"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
@@ -177,6 +177,11 @@
                                                         <constraint firstAttribute="trailing" secondItem="lrC-IH-Ilz" secondAttribute="trailing" constant="14" id="wj5-uO-aLx"/>
                                                         <constraint firstItem="5m9-HS-fFt" firstAttribute="top" secondItem="dhQ-rh-hUf" secondAttribute="top" constant="11" id="zrf-mZ-dMQ"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                            <real key="value" value="15"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
                                                             <exclude reference="ZPf-PX-eyK"/>
@@ -314,7 +319,7 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="borderEnabled" value="NO"/>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-p4-ypJ">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-p4-ypJ" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
                                         <rect key="frame" x="109" y="91" width="131" height="131"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="131" id="4kD-nK-Dhg"/>
@@ -322,6 +327,14 @@
                                             <constraint firstAttribute="width" secondItem="Vdw-p4-ypJ" secondAttribute="height" multiplier="1:1" id="dJJ-Dd-U6Y"/>
                                         </constraints>
                                         <state key="normal" image="addphoto"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="66"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="shlagBaumPhotoButtonPressed:" destination="YaO-ED-Eb0" eventType="touchUpInside" id="AAr-Yj-SXW"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона открытия шлагбаума" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5N-eO-CCa">
                                         <rect key="frame" x="73" y="257" width="203" height="43"/>
@@ -435,6 +448,7 @@
                         <outlet property="shlagbaumAdressTextField" destination="8ff-bC-ple" id="xbZ-f7-RE7"/>
                         <outlet property="shlagbaumNameTextField" destination="YPP-dz-oPW" id="qNB-bu-cLO"/>
                         <outlet property="shlagbaumNumberTextField" destination="zY8-MT-g8d" id="Ipm-XT-jJB"/>
+                        <outlet property="shlagbaumPhotoButton" destination="Vdw-p4-ypJ" id="rTW-P4-eQk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDS-VQ-ASI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -532,13 +546,18 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RU4-0c-WGb">
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RU4-0c-WGb" customClass="RoundedUIButtonWithBorderWhenSelected" customModule="Privratnik" customModuleProvider="target">
                                 <rect key="frame" x="18" y="88" width="88" height="88"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="7KV-ak-DEJ"/>
                                     <constraint firstAttribute="height" constant="88" id="gRz-wH-fsE"/>
                                 </constraints>
-                                <state key="normal" image="editphoto"/>
+                                <state key="normal" image="plug"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="44"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="shlagbaumPhotoButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="Jxt-fa-uGu"/>
                                 </connections>
@@ -639,7 +658,7 @@
         <image name="addphoto" width="131" height="131"/>
         <image name="attention" width="23" height="23"/>
         <image name="back" width="12" height="21"/>
-        <image name="editphoto" width="88" height="88"/>
+        <image name="plug" width="88" height="88"/>
         <image name="plus" width="22" height="22"/>
         <image name="setting1" width="24" height="24"/>
         <image name="shlag1" width="600" height="600"/>

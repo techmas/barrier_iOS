@@ -7,17 +7,17 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ShlagbaumTableVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    
+        getDataFromServer()
 
         // Do any additional setup after loading the view.
     }
@@ -38,6 +38,37 @@ class ShlagbaumTableVC: UIViewController {
         }
     }
     
+    private func getDataFromServer(){
+        FakeModel.shared.shlagbaumArray = []
+        tableView.reloadData()
+        
+        guard let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else {return}
+        guard let token = UserAPI.shared.getTokenAndPhoneNumber().token else {return}
+        
+        NetworkAPI.getBarriers(phone:phone,
+                               token: token) {[weak self] (result, error) in
+                                if error != nil {
+                                    self?.displayAlert(error!)
+                                    return
+                                }
+                                self?.tableView.reloadData()
+        }
+        
+    }
+    
+    private func openBarrierWith(index:Int){
+        guard let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else {return}
+        guard let token = UserAPI.shared.getTokenAndPhoneNumber().token else {return}
+        guard let barrier_id = FakeModel.shared.shlagbaumArray[index].barrier_id else {return}
+        
+        NetworkAPI.openBarrier(phone: phone, token: token, barrierId: barrier_id) {[weak self] (result, error) in
+            if error != nil {
+                self?.displayAlert(error!)
+                return
+            }
+        }
+        
+    }
 }
 
 extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButtonsDelegate {
@@ -46,6 +77,11 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
         if name == "settings" {
             performSegue(withIdentifier: "shlagbaumSettings", sender: FakeModel.shared.shlagbaumArray[indexPath.row])
         }
+        
+        if name == "open" {
+            openBarrierWith(index: indexPath.row)
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,7 +100,8 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
         
         cell.shlagbaumName.text = shlagbaum.name
         cell.shlagbaumAdressUILabel.text = shlagbaum.adress
-        //cell.shlagbaumImageUIImage.image = shlagbaum.photo
+        if shlagbaum.photo != nil {
+            cell.shlagbaumImageUIImage.image = shlagbaum.photo}
         cell.shlagbaumNeedsUpdate = shlagbaum.needsUpdate
         
         cell.setShlagbaumPresentation()
