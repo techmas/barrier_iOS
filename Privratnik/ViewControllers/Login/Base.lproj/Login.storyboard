@@ -15,7 +15,6 @@
         <scene sceneID="EjY-ET-RQL">
             <objects>
                 <navigationController navigationBarHidden="YES" id="Iuq-pt-6Cf" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kqU-hR-B9k">
                         <autoresizingMask key="autoresizingMask"/>
@@ -140,12 +139,12 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQ7-Uz-Qvh">
                                         <rect key="frame" x="310" y="582" width="45" height="45"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="HeC-Y6-7nC"/>
-                                            <constraint firstAttribute="height" constant="45" id="M7R-I5-w58"/>
+                                            <constraint firstAttribute="width" constant="45" id="tlw-3N-c9E"/>
+                                            <constraint firstAttribute="height" constant="45" id="wKq-kj-rGW"/>
                                         </constraints>
                                         <state key="normal" image="customerService"/>
                                         <connections>
-                                            <segue destination="Bx7-bb-9H9" kind="show" id="iEn-0W-g64"/>
+                                            <segue destination="WFC-Ev-phB" kind="show" id="A7s-Yi-7wy"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Повторить отправку кода можно будет через 30 с" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgN-e5-h68">
@@ -163,8 +162,6 @@
                                     <constraint firstItem="iJM-vb-cEL" firstAttribute="top" secondItem="ul0-cc-xaa" secondAttribute="bottom" constant="28" id="8Mp-br-sr6"/>
                                     <constraint firstItem="ul0-cc-xaa" firstAttribute="centerX" secondItem="GUk-DB-Y5C" secondAttribute="centerX" id="Dvi-w2-8c1"/>
                                     <constraint firstItem="duJ-F9-2rt" firstAttribute="centerX" secondItem="GUk-DB-Y5C" secondAttribute="centerX" id="E33-Rj-Of9"/>
-                                    <constraint firstAttribute="trailing" secondItem="SQ7-Uz-Qvh" secondAttribute="trailing" constant="20" id="Evu-LG-beG"/>
-                                    <constraint firstAttribute="bottom" secondItem="SQ7-Uz-Qvh" secondAttribute="bottom" constant="20" id="LQ3-Qj-i0r"/>
                                     <constraint firstItem="SgN-e5-h68" firstAttribute="centerX" secondItem="GUk-DB-Y5C" secondAttribute="centerX" id="ML4-ff-ZyD"/>
                                     <constraint firstItem="3IP-lG-DYI" firstAttribute="centerX" secondItem="GUk-DB-Y5C" secondAttribute="centerX" id="Mbk-1M-7cQ"/>
                                     <constraint firstAttribute="trailing" secondItem="t3K-yT-ylh" secondAttribute="trailing" id="MsB-Am-V2Y"/>
@@ -192,6 +189,8 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GUk-DB-Y5C" secondAttribute="bottom" id="1XG-4g-vA3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GUk-DB-Y5C" secondAttribute="trailing" id="GKX-SK-uWA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SQ7-Uz-Qvh" secondAttribute="trailing" constant="20" id="RCC-CB-Iyl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SQ7-Uz-Qvh" secondAttribute="bottom" constant="20" id="jwJ-w3-mb1"/>
                             <constraint firstItem="GUk-DB-Y5C" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lcN-TZ-lXc"/>
                             <constraint firstItem="GUk-DB-Y5C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="o23-ac-83I"/>
                         </constraints>
@@ -392,6 +391,43 @@
             </objects>
             <point key="canvasLocation" x="60" y="819"/>
         </scene>
+        <!--Техническая поддержка-->
+        <scene sceneID="qGF-PV-rmb">
+            <objects>
+                <viewController id="vb5-8d-kKu" customClass="ChatSupportViewController" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJb-sL-NSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzT-ma-wck">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="trailing" secondItem="QbB-WZ-MzR" secondAttribute="trailing" id="AZv-lU-DsO"/>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="bottom" secondItem="QbB-WZ-MzR" secondAttribute="bottom" id="s1K-hN-r7g"/>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="leading" secondItem="QbB-WZ-MzR" secondAttribute="leading" id="uFr-Za-fnG"/>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="top" secondItem="MJb-sL-NSb" secondAttribute="top" id="vLX-Ow-EWl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QbB-WZ-MzR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Техническая поддержка" id="RzS-Za-MRZ">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="U05-uZ-XbT">
+                            <connections>
+                                <action selector="backButtonAction:" destination="vb5-8d-kKu" id="sVz-aZ-hfA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="IzT-ma-wck" id="aQR-sN-ZY4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q32-Y4-EF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="816"/>
+        </scene>
         <!--TabBarVC-->
         <scene sceneID="28t-8g-RFv">
             <objects>
@@ -400,8 +436,33 @@
             </objects>
             <point key="canvasLocation" x="1709.5999999999999" y="55.322338830584712"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZ7-0o-Tgt">
+            <objects>
+                <navigationController storyboardIdentifier="ChatSupport" automaticallyAdjustsScrollViewInsets="NO" id="WFC-Ev-phB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="slL-Uz-TAa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.15686274509803921" green="0.20784313725490194" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.99994784593582153" green="1" blue="0.9998740553855896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vb5-8d-kKu" kind="relationship" relationship="rootViewController" id="ndC-Zp-X67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzD-aw-YCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796.79999999999995" y="816.79160419790117"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="back" width="12" height="21"/>
         <image name="customerService" width="24" height="24"/>
         <image name="customerService2" width="24" height="24"/>
         <image name="downBlock" width="375" height="137"/>
