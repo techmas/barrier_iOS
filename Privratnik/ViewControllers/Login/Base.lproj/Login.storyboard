@@ -413,13 +413,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QbB-WZ-MzR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Техническая поддержка" id="RzS-Za-MRZ">
-                        <barButtonItem key="leftBarButtonItem" image="back" id="U05-uZ-XbT">
-                            <connections>
-                                <action selector="backButtonAction:" destination="vb5-8d-kKu" id="sVz-aZ-hfA"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Техническая поддержка" id="RzS-Za-MRZ"/>
                     <connections>
                         <outlet property="webView" destination="IzT-ma-wck" id="aQR-sN-ZY4"/>
                     </connections>
@@ -462,7 +456,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back" width="12" height="21"/>
         <image name="customerService" width="24" height="24"/>
         <image name="customerService2" width="24" height="24"/>
         <image name="downBlock" width="375" height="137"/>

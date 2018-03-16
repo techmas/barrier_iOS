@@ -25,6 +25,14 @@ class ChatSupportViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //create barButton
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "back"), for: .normal)
+        button.setTitle(" Назад", for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(back), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: button)
+        
         
         jivoSdk = JivoSdk(webView, "ru")
         jivoSdk?.delegate = self
@@ -48,7 +56,7 @@ class ChatSupportViewController: UIViewController {
     
     //MARK: IBAction
     
-    @IBAction func backButtonAction(_ sender: Any) {
+    @objc func back(){
         self.dismiss(animated: true, completion: nil)
     }
 }
