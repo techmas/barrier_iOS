@@ -31,13 +31,16 @@ struct Shlagbaum {
     
     init?(fromJSON json: JSON) {
             guard let name = json["user_info"].string,
-            let barrier_id = json["barrier_id"].string,
-            let phone = json["opening_number"].string
+            let barrier_id = json["id"].string,
+            let phone = json["number"].string
                 else { return nil }
+        
+        let needsUpdate = json["old"].bool // may be nil
         
         self.name = name
         self.barrier_id = barrier_id
         self.phone = phone
+        self.needsUpdate = needsUpdate
     }
 }
 
