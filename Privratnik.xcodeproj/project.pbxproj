@@ -131,6 +131,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		32175FE7205FC1F600351FA7 /* TechnicalSupport */ = {
+			isa = PBXGroup;
+			children = (
+				366A17A9205C00FB0044CA4C /* JivoChatFramework */,
+				3684BD2D205FACBA00860E50 /* JivoChat.storyboard */,
+				366A17A5205BFF8E0044CA4C /* ChatSupportViewController.swift */,
+			);
+			path = TechnicalSupport;
+			sourceTree = "<group>";
+		};
 		32445CC4205A8C8B00B47474 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +175,6 @@
 				A14BB992203C758900F030C4 /* Login.storyboard */,
 				32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */,
 				328DB16C20458927005E4DD1 /* SupportVC.swift */,
-				366A17A5205BFF8E0044CA4C /* ChatSupportViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -190,7 +199,7 @@
 				328DB1852046ECE3005E4DD1 /* Shlagbaums */,
 				328DB1832046ECBF005E4DD1 /* Settings */,
 				328DB1872046ED5D005E4DD1 /* InDevelopment.storyboard */,
-				3684BD2D205FACBA00860E50 /* JivoChat.storyboard */,
+				32175FE7205FC1F600351FA7 /* TechnicalSupport */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -233,7 +242,6 @@
 				32445CC4205A8C8B00B47474 /* API */,
 				328DB1862046ECF2005E4DD1 /* ViewControllers */,
 				A1BC60502044314000392411 /* UIExtensions */,
-				366A17A9205C00FB0044CA4C /* JivoChatFramework */,
 				A14BB995203C758900F030C4 /* Assets.xcassets */,
 				A14BB997203C758900F030C4 /* LaunchScreen.storyboard */,
 				A14BB99A203C758900F030C4 /* Info.plist */,
