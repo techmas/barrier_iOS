@@ -614,7 +614,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.techmas.Privratnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Privratnik/JivoChatFramework/Privratnik-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Privratnik/ViewControllers/TechnicalSupport/JivoChatFramework/Privratnik-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -633,7 +633,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.techmas.Privratnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Privratnik/JivoChatFramework/Privratnik-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Privratnik/ViewControllers/TechnicalSupport/JivoChatFramework/Privratnik-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
