@@ -38,6 +38,7 @@
 		366A17A6205BFF8E0044CA4C /* ChatSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A17A5205BFF8E0044CA4C /* ChatSupportViewController.swift */; };
 		366A17A8205C00D40044CA4C /* html in Resources */ = {isa = PBXBuildFile; fileRef = 366A17A7205C00D40044CA4C /* html */; };
 		366A17AD205C01370044CA4C /* JivoSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 366A17AB205C01370044CA4C /* JivoSdk.m */; };
+		3684BD2E205FACBA00860E50 /* JivoChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3684BD2D205FACBA00860E50 /* JivoChat.storyboard */; };
 		A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB98E203C758900F030C4 /* AppDelegate.swift */; };
 		A14BB994203C758900F030C4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Login.storyboard */; };
 		A14BB996203C758900F030C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BB995203C758900F030C4 /* Assets.xcassets */; };
@@ -83,6 +84,7 @@
 		366A17AA205C01360044CA4C /* Privratnik-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Privratnik-Bridging-Header.h"; sourceTree = "<group>"; };
 		366A17AB205C01370044CA4C /* JivoSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JivoSdk.m; sourceTree = "<group>"; };
 		366A17AC205C01370044CA4C /* JivoSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JivoSdk.h; sourceTree = "<group>"; };
+		3684BD2D205FACBA00860E50 /* JivoChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JivoChat.storyboard; sourceTree = "<group>"; };
 		6E2B72E0F028BDB4531F7BD1 /* Pods_Privratnik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Privratnik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7834A16823C935F12A3CFFDA /* Pods-Privratnik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Privratnik.release.xcconfig"; path = "Pods/Target Support Files/Pods-Privratnik/Pods-Privratnik.release.xcconfig"; sourceTree = "<group>"; };
 		A14BB98B203C758900F030C4 /* Privratnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privratnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +190,7 @@
 				328DB1852046ECE3005E4DD1 /* Shlagbaums */,
 				328DB1832046ECBF005E4DD1 /* Settings */,
 				328DB1872046ED5D005E4DD1 /* InDevelopment.storyboard */,
+				3684BD2D205FACBA00860E50 /* JivoChat.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				A14BB996203C758900F030C4 /* Assets.xcassets in Resources */,
 				A14BB994203C758900F030C4 /* Login.storyboard in Resources */,
 				328DB17C2046E766005E4DD1 /* Settings.storyboard in Resources */,
+				3684BD2E205FACBA00860E50 /* JivoChat.storyboard in Resources */,
 				328DB1812046EBC8005E4DD1 /* Shlagbaum.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

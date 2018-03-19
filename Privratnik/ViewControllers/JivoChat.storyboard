@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WFC-Ev-phB">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Техническая поддержка-->
+        <scene sceneID="qGF-PV-rmb">
+            <objects>
+                <viewController id="vb5-8d-kKu" customClass="ChatSupportViewController" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MJb-sL-NSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzT-ma-wck">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="trailing" secondItem="QbB-WZ-MzR" secondAttribute="trailing" id="AZv-lU-DsO"/>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="bottom" secondItem="QbB-WZ-MzR" secondAttribute="bottom" id="s1K-hN-r7g"/>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="leading" secondItem="QbB-WZ-MzR" secondAttribute="leading" id="uFr-Za-fnG"/>
+                            <constraint firstItem="IzT-ma-wck" firstAttribute="top" secondItem="MJb-sL-NSb" secondAttribute="top" id="vLX-Ow-EWl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QbB-WZ-MzR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Техническая поддержка" id="RzS-Za-MRZ"/>
+                    <connections>
+                        <outlet property="webView" destination="IzT-ma-wck" id="aQR-sN-ZY4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q32-Y4-EF2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="816"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="uZ7-0o-Tgt">
+            <objects>
+                <navigationController storyboardIdentifier="ChatSupport" automaticallyAdjustsScrollViewInsets="NO" id="WFC-Ev-phB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="slL-Uz-TAa">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.15686274509803921" green="0.20784313725490194" blue="0.49411764705882355" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.99994784593582153" green="1" blue="0.9998740553855896" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vb5-8d-kKu" kind="relationship" relationship="rootViewController" id="ndC-Zp-X67"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xzD-aw-YCs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="796.79999999999995" y="816.79160419790117"/>
+        </scene>
+    </scenes>
+</document>

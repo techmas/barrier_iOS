@@ -131,10 +131,10 @@
         <!--ChatSupport-->
         <scene sceneID="wNf-fJ-ASU">
             <objects>
-                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="ChatSupport" id="eb5-nX-oHi" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZlE-p7-s2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="JivoChat" referencedIdentifier="ChatSupport" id="eb5-nX-oHi" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="3178" y="266"/>
+            <point key="canvasLocation" x="3283" y="350"/>
         </scene>
     </scenes>
 </document>
