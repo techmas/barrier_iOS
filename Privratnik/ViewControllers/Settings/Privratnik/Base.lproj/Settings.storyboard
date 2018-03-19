@@ -74,6 +74,9 @@
                                         <state key="normal" title="Техническая поддержка">
                                             <color key="titleColor" red="0.70980392156862748" green="0.54509803921568623" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="eb5-nX-oHi" kind="show" id="0B1-4O-Wtg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-1i-Ctp">
                                         <rect key="frame" x="112.5" y="538" width="150" height="33"/>
@@ -124,6 +127,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NzF-wm-KGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2688.8000000000002" y="350.37481259370315"/>
+        </scene>
+        <!--ChatSupport-->
+        <scene sceneID="wNf-fJ-ASU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlE-p7-s2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="JivoChat" referencedIdentifier="ChatSupport" id="eb5-nX-oHi" sceneMemberID="viewController"/>
+            </objects>
+            <point key="canvasLocation" x="3283" y="350"/>
         </scene>
     </scenes>
 </document>

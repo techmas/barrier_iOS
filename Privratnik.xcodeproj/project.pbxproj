@@ -35,6 +35,10 @@
 		328DB19620485D44005E4DD1 /* RoundedUIButtonWithProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB19520485D44005E4DD1 /* RoundedUIButtonWithProgress.swift */; };
 		328DB199204864FB005E4DD1 /* RoundedUIButtonWithBorderWhenEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB198204864FB005E4DD1 /* RoundedUIButtonWithBorderWhenEnabled.swift */; };
 		3529E382C83922545379524B /* Pods_Privratnik.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2B72E0F028BDB4531F7BD1 /* Pods_Privratnik.framework */; };
+		366A17A6205BFF8E0044CA4C /* ChatSupportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366A17A5205BFF8E0044CA4C /* ChatSupportViewController.swift */; };
+		366A17A8205C00D40044CA4C /* html in Resources */ = {isa = PBXBuildFile; fileRef = 366A17A7205C00D40044CA4C /* html */; };
+		366A17AD205C01370044CA4C /* JivoSdk.m in Sources */ = {isa = PBXBuildFile; fileRef = 366A17AB205C01370044CA4C /* JivoSdk.m */; };
+		3684BD2E205FACBA00860E50 /* JivoChat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3684BD2D205FACBA00860E50 /* JivoChat.storyboard */; };
 		A14BB98F203C758900F030C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14BB98E203C758900F030C4 /* AppDelegate.swift */; };
 		A14BB994203C758900F030C4 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14BB992203C758900F030C4 /* Login.storyboard */; };
 		A14BB996203C758900F030C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14BB995203C758900F030C4 /* Assets.xcassets */; };
@@ -75,6 +79,12 @@
 		328DB1932048545B005E4DD1 /* TabBarUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUIButton.swift; sourceTree = "<group>"; };
 		328DB19520485D44005E4DD1 /* RoundedUIButtonWithProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIButtonWithProgress.swift; sourceTree = "<group>"; };
 		328DB198204864FB005E4DD1 /* RoundedUIButtonWithBorderWhenEnabled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedUIButtonWithBorderWhenEnabled.swift; sourceTree = "<group>"; };
+		366A17A5205BFF8E0044CA4C /* ChatSupportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSupportViewController.swift; sourceTree = "<group>"; };
+		366A17A7205C00D40044CA4C /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		366A17AA205C01360044CA4C /* Privratnik-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Privratnik-Bridging-Header.h"; sourceTree = "<group>"; };
+		366A17AB205C01370044CA4C /* JivoSdk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JivoSdk.m; sourceTree = "<group>"; };
+		366A17AC205C01370044CA4C /* JivoSdk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JivoSdk.h; sourceTree = "<group>"; };
+		3684BD2D205FACBA00860E50 /* JivoChat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = JivoChat.storyboard; sourceTree = "<group>"; };
 		6E2B72E0F028BDB4531F7BD1 /* Pods_Privratnik.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Privratnik.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7834A16823C935F12A3CFFDA /* Pods-Privratnik.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Privratnik.release.xcconfig"; path = "Pods/Target Support Files/Pods-Privratnik/Pods-Privratnik.release.xcconfig"; sourceTree = "<group>"; };
 		A14BB98B203C758900F030C4 /* Privratnik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Privratnik.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +165,7 @@
 				A14BB992203C758900F030C4 /* Login.storyboard */,
 				32147F99203D851600DD2E23 /* LoginEnterPhoneNumberVC.swift */,
 				328DB16C20458927005E4DD1 /* SupportVC.swift */,
+				366A17A5205BFF8E0044CA4C /* ChatSupportViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -179,8 +190,19 @@
 				328DB1852046ECE3005E4DD1 /* Shlagbaums */,
 				328DB1832046ECBF005E4DD1 /* Settings */,
 				328DB1872046ED5D005E4DD1 /* InDevelopment.storyboard */,
+				3684BD2D205FACBA00860E50 /* JivoChat.storyboard */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		366A17A9205C00FB0044CA4C /* JivoChatFramework */ = {
+			isa = PBXGroup;
+			children = (
+				366A17AC205C01370044CA4C /* JivoSdk.h */,
+				366A17AB205C01370044CA4C /* JivoSdk.m */,
+				366A17AA205C01360044CA4C /* Privratnik-Bridging-Header.h */,
+			);
+			path = JivoChatFramework;
 			sourceTree = "<group>";
 		};
 		A14BB982203C758900F030C4 = {
@@ -190,6 +212,7 @@
 				A14BB98C203C758900F030C4 /* Products */,
 				1662A0D279F8D974AC999E46 /* Pods */,
 				0C50F0D26A9BCF90CC6383FA /* Frameworks */,
+				366A17A7205C00D40044CA4C /* html */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +233,7 @@
 				32445CC4205A8C8B00B47474 /* API */,
 				328DB1862046ECF2005E4DD1 /* ViewControllers */,
 				A1BC60502044314000392411 /* UIExtensions */,
+				366A17A9205C00FB0044CA4C /* JivoChatFramework */,
 				A14BB995203C758900F030C4 /* Assets.xcassets */,
 				A14BB997203C758900F030C4 /* LaunchScreen.storyboard */,
 				A14BB99A203C758900F030C4 /* Info.plist */,
@@ -283,6 +307,7 @@
 				TargetAttributes = {
 					A14BB98A203C758900F030C4 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -311,11 +336,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				328DB1882046ED5D005E4DD1 /* InDevelopment.storyboard in Resources */,
+				366A17A8205C00D40044CA4C /* html in Resources */,
 				328DB1792046E73D005E4DD1 /* TabBar.storyboard in Resources */,
 				A14BB999203C758900F030C4 /* LaunchScreen.storyboard in Resources */,
 				A14BB996203C758900F030C4 /* Assets.xcassets in Resources */,
 				A14BB994203C758900F030C4 /* Login.storyboard in Resources */,
 				328DB17C2046E766005E4DD1 /* Settings.storyboard in Resources */,
+				3684BD2E205FACBA00860E50 /* JivoChat.storyboard in Resources */,
 				328DB1812046EBC8005E4DD1 /* Shlagbaum.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +430,7 @@
 				A1BC605820446CDE00392411 /* JMStringMask.swift in Sources */,
 				328DB1772045B7BC005E4DD1 /* ShlagbaumTableViewCell.swift in Sources */,
 				32445CCC205B167300B47474 /* ProgressHUDManager.swift in Sources */,
+				366A17A6205BFF8E0044CA4C /* ChatSupportViewController.swift in Sources */,
 				32147F9E203DA7E900DD2E23 /* ShlagbaumTableVC.swift in Sources */,
 				328DB17120458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift in Sources */,
 				32445CCE205B195D00B47474 /* AlertHelper.swift in Sources */,
@@ -416,6 +444,7 @@
 				328DB19220480959005E4DD1 /* UIColor+Additions.swift in Sources */,
 				32445CC3205A863100B47474 /* UserAPI.swift in Sources */,
 				328DB199204864FB005E4DD1 /* RoundedUIButtonWithBorderWhenEnabled.swift in Sources */,
+				366A17AD205C01370044CA4C /* JivoSdk.m in Sources */,
 				32445CC6205A8CA800B47474 /* NetworkAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -570,12 +599,15 @@
 			baseConfigurationReference = B16000EA46B5776DD57FAEF4 /* Pods-Privratnik.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PETJ63W9KL;
 				INFOPLIST_FILE = Privratnik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.techmas.Privratnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Privratnik/JivoChatFramework/Privratnik-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -586,12 +618,14 @@
 			baseConfigurationReference = 7834A16823C935F12A3CFFDA /* Pods-Privratnik.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PETJ63W9KL;
 				INFOPLIST_FILE = Privratnik/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.techmas.Privratnik;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Privratnik/JivoChatFramework/Privratnik-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
