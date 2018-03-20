@@ -66,6 +66,13 @@ class NetworkAPI {
             case .success(let responseData):
                 let responseJSON = JSON(responseData)
                 
+                if let badToken = responseJSON["login"].double {
+                    if badToken == 1 {
+                        completion(false, GlobalConstants.AlertMessages.defaultAuthFail)
+                        return
+                    }
+                }
+                
                 guard let shlagbaumArray = responseJSON.array else {
                     completion(false, GlobalConstants.AlertMessages.serverSideProblem)
                     return
