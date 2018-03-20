@@ -30,6 +30,11 @@ class ShlagBaumSettingsVC: UIViewController {
     @IBOutlet weak var oldShlagbaumDescriptionLabel: UILabel!
     @IBOutlet weak var oldShlagbaumImage: UIImageView!
     @IBOutlet weak var oldShlagBaumModernizationButton: RoundedUIButton!
+    @IBAction func oldShlagBaumModernizeButtonPressed(_ sender: Any) {
+        
+    }
+    
+    
     @IBAction func deleteShlagBaumButtonPressed(_ sender: Any) {
         didPressDeleteShlagbaumButton()
     }

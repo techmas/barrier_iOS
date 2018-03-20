@@ -521,6 +521,9 @@
                                         <integer key="value" value="21"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="oldShlagBaumModernizeButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="CXy-RD-kNO"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vCD-BG-wSt">
                                 <rect key="frame" x="130" y="87.5" width="240" height="89"/>
