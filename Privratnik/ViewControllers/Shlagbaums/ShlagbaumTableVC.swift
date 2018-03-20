@@ -13,6 +13,7 @@ class ShlagbaumTableVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var shlagbaumsTableRequireUpdate = false
+
     private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
@@ -50,6 +51,10 @@ class ShlagbaumTableVC: UIViewController {
         }
     }
     
+    @objc private func userInitiatedLogoutProcedure(){
+         NotificationCenter.default.post(name: .loginRequired, object: nil)
+    }
+    
     @objc private func getDataFromServer(){
         //FakeModel.shared.shlagbaumArray = []
         //tableView.reloadData()
@@ -63,7 +68,15 @@ class ShlagbaumTableVC: UIViewController {
                                 DispatchQueue.main.async {
                                     self?.refreshControl.endRefreshing()
                                     if error != nil {
-                                        self?.displayAlert(error!)
+                                        if error == GlobalConstants.AlertMessages.defaultAuthFail {
+                                            let alertController = UIAlertController(title: "Внимание!", message: error, preferredStyle: .alert)
+                                            alertController.addAction(UIAlertAction(title: "Oк", style: .default) { (action:UIAlertAction!) in
+                                                self?.userInitiatedLogoutProcedure()
+                                            })
+                                            self?.present(alertController, animated: true, completion: nil)
+                                        } else {
+                                            self?.displayAlert(error!)
+                                        }
                                         return
                                     }
                                     self?.tableView.reloadData()

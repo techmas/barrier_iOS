@@ -28,7 +28,7 @@ class SettingsVC: UIViewController {
 
     @IBAction func logOutButtonPressed(_ sender: Any) {
         // to remake
-        UserAPI.shared.removeTokenAndPhoneNumber()
+        
         
         delegate?.userInitiatedLogoutProcedure()
         

@@ -68,7 +68,7 @@ class NetworkAPI {
                 print (responseJSON)
                 
                 if let badToken = responseJSON["login"].string {
-                    if badToken == "1" {
+                    if badToken == "0" {
                         completion(false, GlobalConstants.AlertMessages.defaultAuthFail)
                         return
                     }

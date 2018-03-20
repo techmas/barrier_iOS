@@ -37,6 +37,7 @@ class TabBarVC: UIViewController {
         if let targetController = vc as? SettingsVC {
             targetController.delegate = self
         }
+
     }
     var shlagbaumViewController: UIViewController!
     var camerasViewController: UIViewController!
@@ -54,6 +55,7 @@ class TabBarVC: UIViewController {
         // Press 1 button to be selected (Home)
         buttons[selectedIndex].isSelected = true
         BarButtonPressed(buttons[selectedIndex])
+        addNotificationCenterListener()
         
     }
 
@@ -77,7 +79,17 @@ class TabBarVC: UIViewController {
 }
 
 extension TabBarVC:UserCanInitiateLogout{
-    func userInitiatedLogoutProcedure() {
+    @objc func userInitiatedLogoutProcedure() {
+        UserAPI.shared.removeTokenAndPhoneNumber()
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    func addNotificationCenterListener(){
+        NotificationCenter.default.addObserver(self, selector: #selector(userInitiatedLogoutProcedure), name: .loginRequired, object: nil)
+    }
+    
+}
+
+extension Notification.Name {
+    static let loginRequired = Notification.Name("loginRequired")
 }
