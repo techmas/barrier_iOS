@@ -12,18 +12,30 @@ import MBProgressHUD
 class ShlagbaumTableVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var shlagbaumsTableRequireUpdate = false
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addRefreshControl()
+        refreshControl.beginRefreshing()
         getDataFromServer()
-
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if shlagbaumsTableRequireUpdate {
+            refreshControl.beginRefreshing()
+            getDataFromServer()
+        }
         
         tableView.reloadData()
     }
@@ -38,20 +50,24 @@ class ShlagbaumTableVC: UIViewController {
         }
     }
     
-    private func getDataFromServer(){
-        FakeModel.shared.shlagbaumArray = []
-        tableView.reloadData()
+    @objc private func getDataFromServer(){
+        //FakeModel.shared.shlagbaumArray = []
+        //tableView.reloadData()
         
         guard let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else {return}
         guard let token = UserAPI.shared.getTokenAndPhoneNumber().token else {return}
-        
+        //ProgressHUDManager.shared.showHUD()
         NetworkAPI.getBarriers(phone:phone,
                                token: token) {[weak self] (result, error) in
-                                if error != nil {
-                                    self?.displayAlert(error!)
-                                    return
+                                //ProgressHUDManager.shared.hideHUD()
+                                DispatchQueue.main.async {
+                                    self?.refreshControl.endRefreshing()
+                                    if error != nil {
+                                        self?.displayAlert(error!)
+                                        return
+                                    }
+                                    self?.tableView.reloadData()
                                 }
-                                self?.tableView.reloadData()
         }
         
     }
@@ -60,18 +76,45 @@ class ShlagbaumTableVC: UIViewController {
         guard let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else {return}
         guard let token = UserAPI.shared.getTokenAndPhoneNumber().token else {return}
         guard let barrier_id = FakeModel.shared.shlagbaumArray[index].barrier_id else {return}
+        let oldBarrier:Bool = FakeModel.shared.shlagbaumArray[index].needsUpdate ?? false
         
-        NetworkAPI.openBarrier(phone: phone, token: token, barrierId: barrier_id) {[weak self] (result, error) in
-            if error != nil {
-                self?.displayAlert(error!)
-                return
+        
+        if oldBarrier {
+            guard let barrierPhoneNumber = FakeModel.shared.shlagbaumArray[index].phone else {return}
+            NetworkAPI.openBarrierViaGSM(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber) {[weak self] (result, error) in
+                if error != nil {
+                    self?.displayAlert(error!)
+                    return
+                }
+            }
+        } else {
+            NetworkAPI.openBarrier(phone: phone, token: token, barrierId: barrier_id) {[weak self] (result, error) in
+                if error != nil {
+                    self?.displayAlert(error!)
+                    return
+                }
             }
         }
+        
+
         
     }
 }
 
 extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButtonsDelegate {
+    
+    fileprivate func addRefreshControl(){
+        // Add Refresh Control to Table View
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(getDataFromServer), for: .valueChanged)
+        refreshControl.tintColor = UIColor.duskBlue
+        refreshControl.attributedTitle = NSAttributedString(string: "Получаю данные с сервера ...", attributes: nil)
+    }
     
     func didPressButtonWith(name: String?, indexPath: IndexPath!) {
         if name == "settings" {

@@ -69,7 +69,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-rh-hUf" customClass="RoundedUIView" customModule="Privratnik" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="12" width="349" height="132.5"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shlag1" translatesAutoresizingMaskIntoConstraints="NO" id="ogd-Ez-eN4">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plug" translatesAutoresizingMaskIntoConstraints="NO" id="ogd-Ez-eN4">
                                                             <rect key="frame" x="14" y="11" width="55" height="55"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="55" id="gW3-4Y-ZB1"/>
@@ -661,7 +661,6 @@
         <image name="plug" width="88" height="88"/>
         <image name="plus" width="22" height="22"/>
         <image name="setting1" width="24" height="24"/>
-        <image name="shlag1" width="600" height="600"/>
         <image name="slice" width="23" height="23"/>
     </resources>
 </document>

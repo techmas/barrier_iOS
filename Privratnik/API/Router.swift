@@ -15,7 +15,8 @@ enum Router: URLRequestConvertible {
     case submitSMScode(phone:String, SMSCode:String)
     case getBarriers(phone:String, token:String)
     case openBarrier(phone:String, token:String, barrier_id:String)
-    case addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String)
+    case openBarrierViaGSM(phone:String, token:String, barrierPhoneNumber:String)
+    case addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String, barrierAdress:String)
     case removeBarrier(phone:String, token:String, barrier_id:String)
     case updateBarrier(phone:String, token:String, barrier_id:String, barrierName:String?, address:String?, pointX:String?, pointY:String? )
     
@@ -60,14 +61,23 @@ enum Router: URLRequestConvertible {
                 "command":"open",
                 "barrier_id":barrier_id
             ]
+        
+        case .openBarrierViaGSM(let phone, let token, let barrierPhoneNumber):
+            parameters = [
+                "login":phone,
+                "key":token,
+                "from":phone,
+                "to":barrierPhoneNumber
+            ]
            
-        case .addBarrier(let phone, let token, let barrierPhoneNumber, let barrierName):
+        case .addBarrier(let phone, let token, let barrierPhoneNumber, let barrierName, let barrierAdress):
             parameters = [
                 "login":phone,
                 "key":token,
                 "addBarrier":"",
                 "tel_gsm":barrierPhoneNumber,
-                "user_info":barrierName
+                "user_info":barrierName,
+                "address":barrierAdress
             ]
             
         case .removeBarrier(let phone, let token, let barrier_id):
@@ -86,7 +96,7 @@ enum Router: URLRequestConvertible {
             ]
             
             if barrierName != nil {
-                parameters!.updateValue(barrierName!, forKey: "userInfo")
+                parameters!.updateValue(barrierName!, forKey: "user_info")
             }
             
             if address != nil {

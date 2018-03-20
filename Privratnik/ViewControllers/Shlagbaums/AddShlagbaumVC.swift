@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class AddShlagbaumVC: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any){
@@ -27,25 +28,47 @@ class AddShlagbaumVC: UIViewController {
     
     @IBOutlet weak var addButton: RoundedUIButton!
     @IBAction func addButtonPressed(_ sender: Any) {
-        FakeModel.shared.shlagbaumArray.append(Shlagbaum(name:shlagbaumNameTextField.text,
-                                                         adress: shlagbaumAdressTextField.text,
-                                                         phone: shlagbaumNumberTextField.text!,
-                                                         photo: shlagbaumPhotoButton.image(for: .normal),
-                                                         photoURL: nil,
-                                                         needsUpdate: true))
-        
-        navigationController?.popViewController(animated: true)
-        
+        addShlagbaumToServerWithDataFromView()
     }
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         hideKeyboardWhenTappedAround()
-        // Do any additional setup after loading the view.
+    }
+    
+    private func addShlagbaumToServerWithDataFromView(){
+        
+        
+        guard let barrierPhoneNumber = shlagbaumNumberTextField.unmaskedText,
+            let token = UserAPI.shared.getTokenAndPhoneNumber().token,
+            let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else
+        {return}
+        
+        ProgressHUDManager.shared.showHUD()
+        NetworkAPI.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: shlagbaumNameTextField.text ?? "", barrierAdress: shlagbaumAdressTextField.text ?? "") { [weak self] (result, error) in
+            
+            ProgressHUDManager.shared.hideHUD()
+            
+            if error != nil {
+                self?.displayAlert(error!)
+                return
+            }
+            if let parent = self?.presentingViewController as? ShlagbaumTableVC {
+                parent.shlagbaumsTableRequireUpdate = true
+            }
+            
+            
+             FakeModel.shared.shlagbaumArray.append(Shlagbaum(name:self?.shlagbaumNameTextField.text,
+             adress: self?.shlagbaumAdressTextField.text,
+             phone: barrierPhoneNumber,
+             photo: self?.shlagbaumPhotoButton.image(for: .normal),
+             photoURL: nil,
+             needsUpdate: true))
+            
+            
+            self?.navigationController?.popViewController(animated: true)
+        }
     }
 }
 

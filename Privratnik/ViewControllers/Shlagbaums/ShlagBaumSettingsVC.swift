@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class ShlagBaumSettingsVC: UIViewController {
     
@@ -115,16 +116,57 @@ class ShlagBaumSettingsVC: UIViewController {
     
     private func removeShlagbaum(){
         let destinationIndex = FakeModel.shared.shlagbaumArray.index(){$0.phone == selectedShlagbaum.phone}
-        FakeModel.shared.shlagbaumArray.remove(at: destinationIndex!)
-        self.navigationController?.popViewController(animated: true)
+        if destinationIndex == nil {return}
+        
+        guard let barrierID = FakeModel.shared.shlagbaumArray[destinationIndex!].barrier_id,
+            let token = UserAPI.shared.getTokenAndPhoneNumber().token,
+            let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else
+        {return}
+        ProgressHUDManager.shared.showHUD()
+        NetworkAPI.removeBarrier(phone: phone, token: token, barrierId: barrierID, completion: { [weak self] (result, error) in
+            ProgressHUDManager.shared.hideHUD()
+            if error != nil {
+                self?.displayAlert(error!)
+                return
+            }
+            if let parent = self?.presentingViewController as? ShlagbaumTableVC {
+                parent.shlagbaumsTableRequireUpdate = true
+            }
+            FakeModel.shared.shlagbaumArray.remove(at: destinationIndex!)
+            self?.navigationController?.popViewController(animated: true)
+        })
     }
     
     private func saveShlagBaumNewData(){
         let destinationIndex = FakeModel.shared.shlagbaumArray.index(){$0.phone == selectedShlagbaum.phone}
         
-        FakeModel.shared.shlagbaumArray[destinationIndex!].adress = shlagbaumAdressTextField.text
-        FakeModel.shared.shlagbaumArray[destinationIndex!].name = shlagbaumNameTextField.text
-        FakeModel.shared.shlagbaumArray[destinationIndex!].photo = shlagbaumPhotoButton.image(for: .normal)
+        guard let barrierID = FakeModel.shared.shlagbaumArray[destinationIndex!].barrier_id,
+            let token = UserAPI.shared.getTokenAndPhoneNumber().token,
+            let phone = UserAPI.shared.getTokenAndPhoneNumber().phone else
+        {return}
+        
+        let adress = shlagbaumAdressTextField.text
+        let name = shlagbaumNameTextField.text
+        
+        ProgressHUDManager.shared.showHUD()
+        NetworkAPI.updateBarrier(phone: phone, token: token, barrier_id: barrierID, barrierName: name, address: adress, pointX: nil, pointY: nil, completion: { [weak self] (result, error) in
+            ProgressHUDManager.shared.hideHUD()
+            if error != nil {
+                self?.displayAlert(error!)
+                return
+            }
+            if let parent = self?.presentingViewController as? ShlagbaumTableVC {
+                parent.shlagbaumsTableRequireUpdate = true
+            }
+            
+            
+            FakeModel.shared.shlagbaumArray[destinationIndex!].adress = self?.shlagbaumAdressTextField.text
+            FakeModel.shared.shlagbaumArray[destinationIndex!].name = self?.shlagbaumNameTextField.text
+            FakeModel.shared.shlagbaumArray[destinationIndex!].photo = self?.shlagbaumPhotoButton.image(for: .normal)
+            
+            
+            self?.navigationController?.popViewController(animated: true)
+        })
         
     }
 }

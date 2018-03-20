@@ -60,7 +60,11 @@ class ShlagbaumTableViewCell: UITableViewCell {
     }
     
     func setShlagbaumPresentation(){
-        if shlagbaumNeedsUpdate == nil {return}
+        if shlagbaumNeedsUpdate == nil {
+            self.cellRoundedUIView.backgroundColor = UIColor.duskBlue
+            self.settingsButton.setImage(#imageLiteral(resourceName: "setting1"), for: .normal)
+            return
+        }
         
         if shlagbaumNeedsUpdate! {
             self.cellRoundedUIView.backgroundColor = UIColor.greyishBrown

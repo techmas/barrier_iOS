@@ -65,6 +65,7 @@ class NetworkAPI {
             switch response.result {
             case .success(let responseData):
                 let responseJSON = JSON(responseData)
+                print (responseJSON)
                 
                 if let badToken = responseJSON["login"].double {
                     if badToken == 1 {
@@ -77,6 +78,8 @@ class NetworkAPI {
                     completion(false, GlobalConstants.AlertMessages.serverSideProblem)
                     return
                 }
+                
+                FakeModel.shared.shlagbaumArray = []
                 
                 for shlagbaumJSON in shlagbaumArray {
                     if let shlagbaum = Shlagbaum(fromJSON: shlagbaumJSON) {
@@ -120,15 +123,52 @@ class NetworkAPI {
         
     }
     
-    class func addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String, completion: @escaping (_ result:Bool?,_ errorMessage: String?) -> Void) {
+    class func openBarrierViaGSM(phone:String, token:String, barrierPhoneNumber:String, completion: @escaping (_ result:Bool?,_ errorMessage: String?) -> Void) {
         
-        Alamofire.request(Router.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: barrierName)).validate().responseJSON {
+        Alamofire.request(Router.openBarrierViaGSM(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber)).validate().responseJSON { response in
+            switch response.result{
+            case .success(let responseData):
+                let responseJSON = JSON(responseData)
+                print (responseJSON)
+                guard let status = responseJSON["state"].double else {
+                    completion(false, GlobalConstants.AlertMessages.unknownReponseFromServer)
+                    return
+                }
+                
+                if status != 1 {
+                    completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+                    return
+                }
+                
+                completion(true, nil)
+            case .failure(let error):
+                print ("Alamofire request completed with \(error)")
+                completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+            }
+        }
+        
+    }
+    
+    
+    class func addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String, barrierAdress:String, completion: @escaping (_ result:Bool?,_ errorMessage: String?) -> Void) {
+        
+        Alamofire.request(Router.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: barrierName, barrierAdress:barrierAdress)).validate().responseJSON {
             response in
             switch response.result{
             case .success(let responseData):
                 let responseJSON = JSON(responseData)
                 print (responseJSON)
+                guard let status = responseJSON["state"].double else {
+                    completion(false, GlobalConstants.AlertMessages.unknownReponseFromServer)
+                    return
+                }
                 
+                if status != 1 {
+                    completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+                    return
+                }
+                
+                completion(true, nil)
             case .failure(let error):
                 print ("Alamofire request completed with \(error)")
                 completion(false, GlobalConstants.AlertMessages.serverSideProblem)
@@ -145,7 +185,17 @@ class NetworkAPI {
             case .success(let responseData):
                 let responseJSON = JSON(responseData)
                 print (responseJSON)
+                guard let status = responseJSON["state"].double else {
+                    completion(false, GlobalConstants.AlertMessages.unknownReponseFromServer)
+                    return
+                }
                 
+                if status != 1 {
+                    completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+                    return
+                }
+                
+                completion(true, nil)
             case .failure(let error):
                 print ("Alamofire request completed with \(error)")
                 completion(false, GlobalConstants.AlertMessages.serverSideProblem)
@@ -162,7 +212,17 @@ class NetworkAPI {
             case .success(let responseData):
                 let responseJSON = JSON(responseData)
                 print (responseJSON)
+                guard let status = responseJSON["state"].double else {
+                    completion(false, GlobalConstants.AlertMessages.unknownReponseFromServer)
+                    return
+                }
                 
+                if status != 1 {
+                    completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+                    return
+                }
+                
+                completion(true, nil)
             case .failure(let error):
                 print ("Alamofire request completed with \(error)")
                 completion(false, GlobalConstants.AlertMessages.serverSideProblem)

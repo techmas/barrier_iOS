@@ -30,17 +30,21 @@ struct Shlagbaum {
     }
     
     init?(fromJSON json: JSON) {
-            guard let name = json["user_info"].string,
+        guard let name = json["user_info"].string,
             let barrier_id = json["id"].string,
             let phone = json["number"].string
                 else { return nil }
-        
-        let needsUpdate = json["old"].bool // may be nil
+        let needsUpdate = json["old"].string // may be nil
+        let adress = json["address"].string
         
         self.name = name
         self.barrier_id = barrier_id
         self.phone = phone
-        self.needsUpdate = needsUpdate
+        self.adress = adress
+        if needsUpdate == "1" {
+            self.needsUpdate = true
+        }
+        
     }
 }
 
@@ -48,5 +52,6 @@ struct Shlagbaum {
  class FakeModel {
     init() {}
     static let shared = FakeModel()
-    var shlagbaumArray:[Shlagbaum] = [Shlagbaum(name: "Въезд домой", adress: "ул. Якиманка д.22",phone: "3232323", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: false), Shlagbaum(name: "Бизнес-центр Зефир", adress: "ул. Тушаковского д.1",phone: "3232311111", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: false), Shlagbaum(name: "Коттедж", adress: "ул. Сиреневая 24",phone: "99999", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: true)]
+    var shlagbaumArray:[Shlagbaum] = []
+    //var shlagbaumArray:[Shlagbaum] = [Shlagbaum(name: "Въезд домой", adress: "ул. Якиманка д.22",phone: "3232323", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: false), Shlagbaum(name: "Бизнес-центр Зефир", adress: "ул. Тушаковского д.1",phone: "3232311111", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: false), Shlagbaum(name: "Коттедж", adress: "ул. Сиреневая 24",phone: "99999", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: true)]
 }
