@@ -42,6 +42,7 @@ class ShlagbaumTableViewCell: UITableViewCell {
     
     @IBOutlet weak var cameraButton: RoundedUIButton!
     @IBAction func cameraButtonPressed(_ sender: Any) {
+        delegate?.didPressButtonWith(name: "camera", indexPath: currentIndexPath)
     }
     
     @IBOutlet weak var shlagbaumName: UILabel!

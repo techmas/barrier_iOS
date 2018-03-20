@@ -35,5 +35,8 @@ class SettingsVC: UIViewController {
         
     }
     
-
+    @IBAction func startDemoButtonPressed(_ sender: Any) {
+        displayAlert("Раздел в разработке, попробуйте еще раз чуть позже")
+    }
+    
 }

@@ -125,6 +125,10 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
             openBarrierWith(index: indexPath.row)
         }
         
+        if name == "camera" {
+            displayAlert("Раздел в разработке, попробуйте еще раз чуть позже")
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

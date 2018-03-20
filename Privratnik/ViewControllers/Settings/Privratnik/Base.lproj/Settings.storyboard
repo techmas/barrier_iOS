@@ -67,6 +67,9 @@
                                         <state key="normal" title="Запуск демо обучения">
                                             <color key="titleColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="startDemoButtonPressed:" destination="Kax-H5-lAk" eventType="touchUpInside" id="vwJ-p1-soR"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFD-x3-Hdh">
                                         <rect key="frame" x="20" y="151.5" width="196" height="33"/>
@@ -131,8 +134,8 @@
         <!--ChatSupport-->
         <scene sceneID="wNf-fJ-ASU">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlE-p7-s2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="JivoChat" referencedIdentifier="ChatSupport" id="eb5-nX-oHi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZlE-p7-s2S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3283" y="350"/>
         </scene>
