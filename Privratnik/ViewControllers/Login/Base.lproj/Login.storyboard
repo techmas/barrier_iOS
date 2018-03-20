@@ -20,12 +20,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="FBK-9J-0ow"/>
+                        <segue destination="5uu-5k-jGs" kind="relationship" relationship="rootViewController" id="dbI-CP-oYr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMG-4a-qDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-793" y="60"/>
+            <point key="canvasLocation" x="-1346" y="73"/>
         </scene>
         <!--Login Enter Phone NumberVC-->
         <scene sceneID="tne-QT-ifu">
@@ -209,7 +209,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="56.221889055472268"/>
+            <point key="canvasLocation" x="770" y="497"/>
         </scene>
         <!--SupportVC-->
         <scene sceneID="YvT-t3-jtI">
@@ -402,17 +402,63 @@
         <!--ChatSupport-->
         <scene sceneID="WjL-KP-5HF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zKP-1j-tLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="ChatSupport" storyboardName="JivoChat" referencedIdentifier="ChatSupport" id="g6j-Xt-79d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zKP-1j-tLz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="505"/>
+            <point key="canvasLocation" x="902" y="1024"/>
+        </scene>
+        <!--LoginPlaceholder-->
+        <scene sceneID="TlU-Eh-uuY">
+            <objects>
+                <viewController title="LoginPlaceholder" id="5uu-5k-jGs" customClass="LoginRouterVC" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sw8-ON-wPI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="centralBlock" translatesAutoresizingMaskIntoConstraints="NO" id="6Ut-Lf-0FW">
+                                <rect key="frame" x="0.0" y="126" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6Ut-Lf-0FW" secondAttribute="height" multiplier="1:1" id="s7m-3A-Md0"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="downBlock" translatesAutoresizingMaskIntoConstraints="NO" id="qVr-5h-M0m">
+                                <rect key="frame" x="0.0" y="506" width="375" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qVr-5h-M0m" secondAttribute="height" multiplier="375:137" id="LdP-aP-dc0"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hl9-Wc-J0R" firstAttribute="trailing" secondItem="6Ut-Lf-0FW" secondAttribute="trailing" id="6ya-CN-t45"/>
+                            <constraint firstItem="6Ut-Lf-0FW" firstAttribute="centerY" secondItem="sw8-ON-wPI" secondAttribute="centerY" constant="-20" id="7RC-LI-TVM"/>
+                            <constraint firstItem="6Ut-Lf-0FW" firstAttribute="leading" secondItem="hl9-Wc-J0R" secondAttribute="leading" id="BtU-nX-21Q"/>
+                            <constraint firstItem="hl9-Wc-J0R" firstAttribute="trailing" secondItem="qVr-5h-M0m" secondAttribute="trailing" id="OaX-sE-itg"/>
+                            <constraint firstItem="qVr-5h-M0m" firstAttribute="top" secondItem="6Ut-Lf-0FW" secondAttribute="bottom" constant="5" id="QaX-Ez-HMb"/>
+                            <constraint firstItem="qVr-5h-M0m" firstAttribute="leading" secondItem="hl9-Wc-J0R" secondAttribute="leading" id="hBI-wb-RnW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hl9-Wc-J0R"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GGj-38-36V"/>
+                    <connections>
+                        <segue destination="H9m-f7-C87" kind="show" identifier="showMainScreen" id="0dR-v3-mi3"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="showLoginScreen" id="lEO-eq-0e2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qzp-pH-wLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-482" y="-134"/>
         </scene>
     </scenes>
     <resources>
+        <image name="centralBlock" width="401" height="400"/>
         <image name="customerService" width="24" height="24"/>
         <image name="customerService2" width="24" height="24"/>
         <image name="downBlock" width="375" height="137"/>
         <image name="logo1" width="234" height="149"/>
         <image name="logo2" width="135" height="59"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lCK-Mo-b11"/>
+    </inferredMetricsTieBreakers>
 </document>
