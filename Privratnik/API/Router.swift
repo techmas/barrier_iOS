@@ -15,7 +15,10 @@ enum Router: URLRequestConvertible {
     case submitSMScode(phone:String, SMSCode:String)
     case getBarriers(phone:String, token:String)
     case openBarrier(phone:String, token:String, barrier_id:String)
-   
+    case addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String)
+    case removeBarrier(phone:String, token:String, barrier_id:String)
+    case updateBarrier(phone:String, token:String, barrier_id:String, barrierName:String?, address:String?, pointX:String?, pointY:String? )
+    
     static let baseURLString = "https://api.privratnik.net:44590/app/api.php"
     
     var method: HTTPMethod {
@@ -57,6 +60,47 @@ enum Router: URLRequestConvertible {
                 "command":"open",
                 "barrier_id":barrier_id
             ]
+           
+        case .addBarrier(let phone, let token, let barrierPhoneNumber, let barrierName):
+            parameters = [
+                "login":phone,
+                "key":token,
+                "addBarrier":"",
+                "tel_gsm":barrierPhoneNumber,
+                "user_info":barrierName
+            ]
+            
+        case .removeBarrier(let phone, let token, let barrier_id):
+            parameters = [
+                "login":phone,
+                "key":token,
+                "rmBarrier":barrier_id
+            ]
+            
+        case .updateBarrier(let phone, let token, let barrier_id, let barrierName, let address, let pointX, let pointY):
+            parameters = [
+                "login":phone,
+                "key":token,
+                "UpBarrier":"",
+                "barrier_id":barrier_id
+            ]
+            
+            if barrierName != nil {
+                parameters!.updateValue(barrierName!, forKey: "userInfo")
+            }
+            
+            if address != nil {
+                parameters!.updateValue(address!, forKey: "address")
+            }
+            
+            if pointX != nil {
+                parameters!.updateValue(pointX!, forKey: "pointX")
+            }
+            
+            if pointY != nil {
+                parameters!.updateValue(pointY!, forKey: "pointY")
+            }
+            
             
             
         default:

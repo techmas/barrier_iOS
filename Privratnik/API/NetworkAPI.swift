@@ -119,5 +119,56 @@ class NetworkAPI {
         }
         
     }
+    
+    class func addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String, completion: @escaping (_ result:Bool?,_ errorMessage: String?) -> Void) {
+        
+        Alamofire.request(Router.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: barrierName)).validate().responseJSON {
+            response in
+            switch response.result{
+            case .success(let responseData):
+                let responseJSON = JSON(responseData)
+                print (responseJSON)
+                
+            case .failure(let error):
+                print ("Alamofire request completed with \(error)")
+                completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+            }
+            
+        }
+    }
+    
+    class func removeBarrier(phone:String, token:String, barrierId:String, completion: @escaping(_ result:Bool?,_ errorMessage: String?) -> Void) {
+        
+        Alamofire.request(Router.removeBarrier(phone: phone, token: token, barrier_id: barrierId)).validate().responseJSON {
+            response in
+            switch response.result{
+            case .success(let responseData):
+                let responseJSON = JSON(responseData)
+                print (responseJSON)
+                
+            case .failure(let error):
+                print ("Alamofire request completed with \(error)")
+                completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+            }
+            
+        }
+    }
+    
+    class func updateBarrier(phone:String, token:String, barrier_id:String, barrierName:String?, address:String?, pointX:String?, pointY:String?, completion: @escaping(_ result:Bool?,_ errorMessage: String?) -> Void) {
+        
+        Alamofire.request(Router.updateBarrier(phone: phone, token: token, barrier_id: barrier_id, barrierName: barrierName, address: address, pointX: pointX, pointY: pointY)).validate().responseJSON {
+            response in
+            switch response.result{
+            case .success(let responseData):
+                let responseJSON = JSON(responseData)
+                print (responseJSON)
+                
+            case .failure(let error):
+                print ("Alamofire request completed with \(error)")
+                completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+            }
+            
+        }
+    }
 }
 
