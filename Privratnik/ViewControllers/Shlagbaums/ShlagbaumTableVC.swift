@@ -129,19 +129,18 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
         refreshControl.attributedTitle = NSAttributedString(string: "Получаю данные с сервера ...", attributes: nil)
     }
     
-    func didPressButtonWith(name: String?, indexPath: IndexPath!) {
-        if name == "settings" {
+    func didPressButtonWith(buttonName: String?, indexPath: IndexPath!) {
+        if buttonName == "settings" {
             performSegue(withIdentifier: "shlagbaumSettings", sender: FakeModel.shared.shlagbaumArray[indexPath.row])
         }
         
-        if name == "open" {
+        if buttonName == "open" {
             openBarrierWith(index: indexPath.row)
         }
         
-        if name == "camera" {
+        if buttonName == "camera" {
             displayAlert("Раздел в разработке, попробуйте еще раз чуть позже")
         }
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -152,16 +151,14 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ShlagbaumTableViewCell
         
         cell.delegate = self
-        
         cell.updateLeftRightConstraint()
         cell.currentIndexPath = indexPath
         
         let shlagbaum = FakeModel.shared.shlagbaumArray[indexPath.row]
-        
         cell.shlagbaumName.text = shlagbaum.name
         cell.shlagbaumAdressUILabel.text = shlagbaum.adress
         if shlagbaum.photo != nil {
-            cell.shlagbaumImageUIImage.image = shlagbaum.photo}
+            cell.shlagbaumImageUIImage.image = shlagbaum.photo }
         cell.shlagbaumNeedsUpdate = shlagbaum.needsUpdate
         
         cell.setShlagbaumPresentation()

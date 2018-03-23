@@ -8,7 +8,11 @@
 
 import UIKit
 
-var isRightHandOrientation = false
+var isRightHandOrientation = !UserAPI.shared.isLeftHanded() {
+    didSet{
+        UserAPI.shared.isLeftHanded(!isRightHandOrientation)
+    }
+}
 
 class SettingsVC: UIViewController {
 

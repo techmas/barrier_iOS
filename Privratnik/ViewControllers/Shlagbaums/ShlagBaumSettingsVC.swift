@@ -169,6 +169,9 @@ class ShlagBaumSettingsVC: UIViewController {
             FakeModel.shared.shlagbaumArray[destinationIndex!].name = self?.shlagbaumNameTextField.text
             FakeModel.shared.shlagbaumArray[destinationIndex!].photo = self?.shlagbaumPhotoButton.image(for: .normal)
             
+            if let image = self?.shlagbaumPhotoButton.image(for: .normal) {
+                UserAPI.shared.saveImage(image: image, for: barrierID)
+            }
             
             self?.navigationController?.popViewController(animated: true)
         })

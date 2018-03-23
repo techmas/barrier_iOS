@@ -11,7 +11,9 @@ import KeychainSwift
 class UserAPI {
     
     static let shared = UserAPI()
-    private init() {}
+    private init() {
+       initUserDefaults()
+    }
     
     // MARK: Token & Keychain
     
@@ -34,22 +36,46 @@ class UserAPI {
         return keychain.delete(tokenKey) && keychain.delete(phoneKey)
     }
     
-    /*
-    private func setToken(_ token: String) -> Bool {
-        return keychain.set(token, forKey: tokenKey)
+    // MARK: UserDefaults
+    
+    private let userDefaults = UserDefaults.standard
+    
+    private func initUserDefaults(){
+        
+        print (userDefaults.bool(forKey: "isLeftHanded"))
+        
     }
     
-    func getToken() -> String? {
-        return keychain.get(tokenKey)
+    func isLeftHanded() -> Bool {
+        return userDefaults.bool(forKey: "isLeftHanded")
     }
     
-    func removeToken() -> Bool {
-        return keychain.delete(tokenKey)
+    func isLeftHanded(_ value: Bool) {
+        userDefaults.set(value, forKey: "isLeftHanded")
     }
-    */
-    
-    // MARK: Something else
     
     
+    // MARK: Saving user's barrier image
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func saveImage(image: UIImage, for barrierId: String){
+            if let data = UIImagePNGRepresentation(image) {
+                let filename = getDocumentsDirectory().appendingPathComponent("\(barrierId).png")
+                try? data.write(to: filename)
+            }
+    }
+    
+    func getImageFor(barrierId: String) -> UIImage? {
+        
+        let imageURL = getDocumentsDirectory().appendingPathComponent("\(barrierId).png")
+        guard let image = UIImage(contentsOfFile: imageURL.path) else {return nil}
+        
+        return image
+    }
+
 }
 

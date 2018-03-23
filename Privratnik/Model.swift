@@ -45,6 +45,9 @@ struct Shlagbaum {
             self.needsUpdate = true
         }
         
+        // Photo
+        self.photo = UserAPI.shared.getImageFor(barrierId: barrier_id)
+        
     }
 }
 
@@ -53,5 +56,5 @@ struct Shlagbaum {
     init() {}
     static let shared = FakeModel()
     var shlagbaumArray:[Shlagbaum] = []
-    //var shlagbaumArray:[Shlagbaum] = [Shlagbaum(name: "Въезд домой", adress: "ул. Якиманка д.22",phone: "3232323", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: false), Shlagbaum(name: "Бизнес-центр Зефир", adress: "ул. Тушаковского д.1",phone: "3232311111", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: false), Shlagbaum(name: "Коттедж", adress: "ул. Сиреневая 24",phone: "99999", photo: #imageLiteral(resourceName: "plug"), photoURL: nil, needsUpdate: true)]
+    
 }

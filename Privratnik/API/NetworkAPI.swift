@@ -150,7 +150,7 @@ class NetworkAPI {
     }
     
     
-    class func addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String, barrierAdress:String, completion: @escaping (_ result:Bool?,_ errorMessage: String?) -> Void) {
+    class func addBarrier(phone:String, token:String, barrierPhoneNumber:String, barrierName:String, barrierAdress:String, completion: @escaping (_ result:Bool?, _ barrierId: String?, _ errorMessage: String?) -> Void) {
         
         Alamofire.request(Router.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: barrierName, barrierAdress:barrierAdress)).validate().responseJSON {
             response in
@@ -159,19 +159,22 @@ class NetworkAPI {
                 let responseJSON = JSON(responseData)
                 print (responseJSON)
                 guard let status = responseJSON["state"].double else {
-                    completion(false, GlobalConstants.AlertMessages.unknownReponseFromServer)
+                    completion(false, nil, GlobalConstants.AlertMessages.unknownReponseFromServer)
                     return
                 }
                 
                 if status != 1 {
-                    completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+                    completion(false, nil,  GlobalConstants.AlertMessages.serverSideProblem)
                     return
                 }
                 
-                completion(true, nil)
+                var barrierId:String? = nil
+                barrierId = responseJSON["id"].string
+                
+                completion(true, barrierId, nil)
             case .failure(let error):
                 print ("Alamofire request completed with \(error)")
-                completion(false, GlobalConstants.AlertMessages.serverSideProblem)
+                completion(false, nil, GlobalConstants.AlertMessages.serverSideProblem)
             }
             
         }

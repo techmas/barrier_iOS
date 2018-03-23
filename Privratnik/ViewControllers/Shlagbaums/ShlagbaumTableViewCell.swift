@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CellButtonsDelegate {
-    func didPressButtonWith(name:String?, indexPath:IndexPath!)
+    func didPressButtonWith(buttonName:String?, indexPath:IndexPath!)
 }
 
 class ShlagbaumTableViewCell: UITableViewCell {
@@ -32,17 +32,17 @@ class ShlagbaumTableViewCell: UITableViewCell {
             self.openButton.backgroundColor = UIColor.white
             self.openButton.isEnabled = true
         })
-        delegate?.didPressButtonWith(name: "open", indexPath: currentIndexPath)
+        delegate?.didPressButtonWith(buttonName: "open", indexPath: currentIndexPath)
     }
     
     @IBOutlet weak var settingsButton: UIButton!
     @IBAction func settingsButtonPressed(_ sender: Any) {
-        delegate?.didPressButtonWith(name: "settings", indexPath: currentIndexPath)
+        delegate?.didPressButtonWith(buttonName: "settings", indexPath: currentIndexPath)
     }
     
     @IBOutlet weak var cameraButton: RoundedUIButton!
     @IBAction func cameraButtonPressed(_ sender: Any) {
-        delegate?.didPressButtonWith(name: "camera", indexPath: currentIndexPath)
+        delegate?.didPressButtonWith(buttonName: "camera", indexPath: currentIndexPath)
     }
     
     @IBOutlet weak var shlagbaumName: UILabel!
@@ -78,10 +78,10 @@ class ShlagbaumTableViewCell: UITableViewCell {
     }
     
     func updateLeftRightConstraint(){
-        openButtonLeftHandConstraint.isActive = !isRightHandOrientation
-        openButtonRightHandConstraint.isActive = isRightHandOrientation
-        settingsButtonLeftHandConstraint.isActive = !isRightHandOrientation
-        settingsButtonRightHandConstraint.isActive = isRightHandOrientation
+        openButtonLeftHandConstraint.isActive = UserAPI.shared.isLeftHanded()
+        openButtonRightHandConstraint.isActive = !UserAPI.shared.isLeftHanded()
+        settingsButtonLeftHandConstraint.isActive = UserAPI.shared.isLeftHanded()
+        settingsButtonRightHandConstraint.isActive = !UserAPI.shared.isLeftHanded()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

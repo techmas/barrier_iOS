@@ -46,7 +46,7 @@ class AddShlagbaumVC: UIViewController {
         {return}
         
         ProgressHUDManager.shared.showHUD()
-        NetworkAPI.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: shlagbaumNameTextField.text ?? "", barrierAdress: shlagbaumAdressTextField.text ?? "") { [weak self] (result, error) in
+        NetworkAPI.addBarrier(phone: phone, token: token, barrierPhoneNumber: barrierPhoneNumber, barrierName: shlagbaumNameTextField.text ?? "", barrierAdress: shlagbaumAdressTextField.text ?? "") { [weak self] (result, barrierId, error) in
             
             ProgressHUDManager.shared.hideHUD()
             
@@ -66,6 +66,11 @@ class AddShlagbaumVC: UIViewController {
              photoURL: nil,
              needsUpdate: true))
             
+            if barrierId != nil {
+                if let image = self?.shlagbaumPhotoButton.image(for: .normal) {
+                    UserAPI.shared.saveImage(image: image, for: barrierId!)
+                }
+            }
             
             self?.navigationController?.popViewController(animated: true)
         }
