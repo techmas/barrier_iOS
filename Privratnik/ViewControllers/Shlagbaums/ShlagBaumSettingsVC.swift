@@ -35,6 +35,7 @@ class ShlagBaumSettingsVC: UIViewController {
     }
     
     
+    @IBOutlet weak var deleteShlagBaumButton: UIButton!
     @IBAction func deleteShlagBaumButtonPressed(_ sender: Any) {
         didPressDeleteShlagbaumButton()
     }
@@ -68,6 +69,20 @@ class ShlagBaumSettingsVC: UIViewController {
         if selectedShlagbaum.photo != nil {
             shlagbaumPhotoButton.setImage(selectedShlagbaum.photo, for: .normal)
         }
+        
+        // Кнопка удалить шлагбаум или сбросить данные (мой или серверный шлагбаум)
+        
+        if selectedShlagbaum.needsUpdate == nil {
+            deleteShlagBaumButton.setTitle("Сбросить данные", for: .normal)
+            return
+        }
+        
+        if selectedShlagbaum.needsUpdate!{
+            deleteShlagBaumButton.setTitle("Удалить шлагбаум", for: .normal)}
+        else {
+            deleteShlagBaumButton.setTitle("Сбросить данные", for: .normal)
+        }
+        
     }
     
     private func didPressEditButton(){
@@ -137,7 +152,15 @@ class ShlagBaumSettingsVC: UIViewController {
             if let parent = self?.presentingViewController as? ShlagbaumTableVC {
                 parent.shlagbaumsTableRequireUpdate = true
             }
-            FakeModel.shared.shlagbaumArray.remove(at: destinationIndex!)
+            
+            // Только пользовательские шлагбаумы по-настоящему удаляются
+            if self?.selectedShlagbaum.needsUpdate == true {
+                FakeModel.shared.shlagbaumArray.remove(at: destinationIndex!)
+            }
+            
+            // try to remove image from DB
+            UserAPI.shared.removeImage(for: barrierID)
+            
             self?.navigationController?.popViewController(animated: true)
         })
     }

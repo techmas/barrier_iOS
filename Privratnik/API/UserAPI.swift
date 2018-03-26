@@ -69,6 +69,11 @@ class UserAPI {
             }
     }
     
+    func removeImage(for barrierId: String){
+        let filenameURL = getDocumentsDirectory().appendingPathComponent("\(barrierId).png")
+        try? FileManager.default.removeItem(at: filenameURL)
+    }
+    
     func getImageFor(barrierId: String) -> UIImage? {
         
         let imageURL = getDocumentsDirectory().appendingPathComponent("\(barrierId).png")

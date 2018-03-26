@@ -643,6 +643,7 @@
                         <viewLayoutGuide key="safeArea" id="xGB-tE-DX9"/>
                     </view>
                     <connections>
+                        <outlet property="deleteShlagBaumButton" destination="uoX-eM-sQ7" id="ioI-DH-8b3"/>
                         <outlet property="editButton" destination="CFJ-xS-Q8d" id="52S-PN-SY0"/>
                         <outlet property="oldShlagBaumModernizationButton" destination="K3u-eb-MAK" id="ks6-oZ-epv"/>
                         <outlet property="oldShlagbaumDescriptionLabel" destination="ee4-y1-ucE" id="ttS-7C-oOF"/>
