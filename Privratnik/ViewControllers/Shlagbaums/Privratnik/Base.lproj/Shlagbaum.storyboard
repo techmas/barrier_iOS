@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DMJ-v7-QIC">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +18,14 @@
             <objects>
                 <viewController id="XdS-2k-ZEU" customClass="ShlagbaumTableVC" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KK2-ky-eMq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rb0-Mx-VpG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Управляемые объекты" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvk-tc-6fZ">
-                                        <rect key="frame" x="98" y="32" width="180.5" height="21"/>
+                                        <rect key="frame" x="70.5" y="32" width="180.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="wKF-bw-gJ8"/>
                                         </constraints>
@@ -33,7 +34,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qvc-ms-hCS">
-                                        <rect key="frame" x="337" y="32" width="22" height="22"/>
+                                        <rect key="frame" x="282" y="32" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="hap-Si-hI3"/>
                                             <constraint firstAttribute="height" constant="22" id="pj5-7C-e5o"/>
@@ -54,20 +55,20 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" indicatorStyle="black" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="y6F-aA-qOX">
-                                <rect key="frame" x="13" y="70" width="349" height="597"/>
+                                <rect key="frame" x="13" y="70" width="294" height="410"/>
                                 <color key="backgroundColor" red="0.9137254901960784" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="-10" maxY="0.0"/>
                                 <inset key="separatorInset" minX="800" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="145" id="qEy-3L-x89" customClass="ShlagbaumTableViewCell" customModule="Privratnik" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="349" height="145"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="145" id="qEy-3L-x89" customClass="ShlagbaumTableViewCell" customModule="Privratnik" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="294" height="145"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qEy-3L-x89" id="kUa-ci-3oZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="144.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="144.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-rh-hUf" customClass="RoundedUIView" customModule="Privratnik" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="12" width="349" height="132.5"/>
+                                                    <rect key="frame" x="0.0" y="12" width="294" height="132.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plug" translatesAutoresizingMaskIntoConstraints="NO" id="ogd-Ez-eN4">
                                                             <rect key="frame" x="14" y="11" width="55" height="55"/>
@@ -83,10 +84,9 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knO-QU-pFN" customClass="RoundedUIButtonWithProgress" customModule="Privratnik" customModuleProvider="target">
-                                                            <rect key="frame" x="14" y="76" width="120" height="42"/>
+                                                            <rect key="frame" x="14" y="76" width="88" height="42"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="120" id="L4j-Ww-bch"/>
                                                                 <constraint firstAttribute="height" constant="42" id="vIA-HM-0W1"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
@@ -103,7 +103,7 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baD-Bd-CfB" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
-                                                            <rect key="frame" x="153" y="76" width="42" height="42"/>
+                                                            <rect key="frame" x="125.5" y="76" width="42" height="42"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="42" id="lhR-3k-mUF"/>
@@ -122,13 +122,13 @@
                                                             </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шлагбаум во дворе" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-HS-fFt">
-                                                            <rect key="frame" x="78" y="11" width="262" height="21"/>
+                                                            <rect key="frame" x="78" y="11" width="207" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ул. Академика Королева д. 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcb-OV-rb8">
-                                                            <rect key="frame" x="78" y="33" width="262" height="14"/>
+                                                            <rect key="frame" x="78" y="33" width="207" height="14"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="14" id="puk-VA-xza"/>
                                                             </constraints>
@@ -137,7 +137,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrC-IH-Ilz">
-                                                            <rect key="frame" x="293" y="76" width="42" height="42"/>
+                                                            <rect key="frame" x="238" y="76" width="42" height="42"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="42" id="Jnd-ZU-AZr"/>
@@ -173,6 +173,7 @@
                                                         <constraint firstItem="lrC-IH-Ilz" firstAttribute="leading" secondItem="dhQ-rh-hUf" secondAttribute="leading" constant="14" id="c36-z5-U9K"/>
                                                         <constraint firstItem="Pcb-OV-rb8" firstAttribute="leading" secondItem="ogd-Ez-eN4" secondAttribute="trailing" constant="9" id="hp3-18-10V"/>
                                                         <constraint firstAttribute="trailing" secondItem="Pcb-OV-rb8" secondAttribute="trailing" constant="9" id="nVQ-W8-AQa"/>
+                                                        <constraint firstItem="knO-QU-pFN" firstAttribute="width" secondItem="dhQ-rh-hUf" secondAttribute="width" multiplier="0.3" id="vMd-Xu-wy3"/>
                                                         <constraint firstItem="5m9-HS-fFt" firstAttribute="leading" secondItem="ogd-Ez-eN4" secondAttribute="trailing" constant="9" id="w2O-on-BSO"/>
                                                         <constraint firstAttribute="trailing" secondItem="lrC-IH-Ilz" secondAttribute="trailing" constant="14" id="wj5-uO-aLx"/>
                                                         <constraint firstItem="5m9-HS-fFt" firstAttribute="top" secondItem="dhQ-rh-hUf" secondAttribute="top" constant="11" id="zrf-mZ-dMQ"/>
@@ -264,14 +265,14 @@
             <objects>
                 <viewController id="YaO-ED-Eb0" customClass="AddShlagbaumVC" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jnp-jx-8yF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s3x-Fg-nl6">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить шлагбаум" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKq-8m-Td6">
-                                        <rect key="frame" x="107.5" y="34.5" width="160.5" height="21"/>
+                                        <rect key="frame" x="80" y="34.5" width="160.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="aU5-ae-UIZ"/>
                                         </constraints>
@@ -279,8 +280,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wod-Ua-sgT">
-                                        <rect key="frame" x="14" y="34.5" width="62" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wod-Ua-sgT">
+                                        <rect key="frame" x="8" y="34.5" width="62" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="-10" maxY="0.0"/>
                                         <state key="normal" title="Назад" image="back"/>
@@ -295,19 +296,19 @@
                                     <constraint firstAttribute="bottom" secondItem="cKq-8m-Td6" secondAttribute="bottom" constant="14.5" id="Yot-za-665"/>
                                     <constraint firstAttribute="bottom" secondItem="Wod-Ua-sgT" secondAttribute="bottom" constant="14.5" id="a5d-MI-0HE"/>
                                     <constraint firstAttribute="height" constant="70" id="xFZ-5V-dEL"/>
-                                    <constraint firstItem="Wod-Ua-sgT" firstAttribute="leading" secondItem="s3x-Fg-nl6" secondAttribute="leading" constant="14" id="xcf-gq-HpC"/>
+                                    <constraint firstItem="Wod-Ua-sgT" firstAttribute="leading" secondItem="s3x-Fg-nl6" secondAttribute="leading" constant="8" id="xcf-gq-HpC"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DvP-OL-5NA" customClass="RoundedUIView" customModule="Privratnik" customModuleProvider="target">
-                                <rect key="frame" x="13" y="83" width="349" height="447"/>
+                                <rect key="frame" x="13" y="83" width="294" height="336"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название шлагбаума" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPP-dz-oPW" customClass="RoundedUITextField" customModule="Privratnik" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="29" width="239" height="42"/>
+                                        <rect key="frame" x="55" y="15" width="184" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="cOO-Yu-c4l"/>
+                                            <constraint firstAttribute="height" constant="40" id="cOO-Yu-c4l"/>
                                         </constraints>
                                         <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -320,16 +321,14 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-p4-ypJ" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
-                                        <rect key="frame" x="109" y="91" width="131" height="131"/>
+                                        <rect key="frame" x="112.5" y="75" width="70" height="70"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="131" id="4kD-nK-Dhg"/>
-                                            <constraint firstAttribute="width" constant="131" id="MXz-6q-lJG"/>
                                             <constraint firstAttribute="width" secondItem="Vdw-p4-ypJ" secondAttribute="height" multiplier="1:1" id="dJJ-Dd-U6Y"/>
                                         </constraints>
                                         <state key="normal" image="addphoto"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="66"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -337,7 +336,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер телефона открытия шлагбаума" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e5N-eO-CCa">
-                                        <rect key="frame" x="73" y="257" width="203" height="43"/>
+                                        <rect key="frame" x="45.5" y="165" width="203" height="43"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="W9Z-6Y-4SP"/>
                                             <constraint firstAttribute="width" constant="203" id="qLz-NZ-Otc"/>
@@ -347,10 +346,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" placeholder="(903) ___-__-__" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zY8-MT-g8d" customClass="RoundedUITextFieldMasked" customModule="Privratnik" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="313" width="275" height="42"/>
+                                        <rect key="frame" x="9.5" y="221" width="275" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="275" id="HtM-dj-iIP"/>
-                                            <constraint firstAttribute="height" constant="42" id="nbY-79-VVN"/>
+                                            <constraint firstAttribute="height" constant="40" id="nbY-79-VVN"/>
                                         </constraints>
                                         <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -377,9 +376,9 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Адрес шлагбаума" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8ff-bC-ple" customClass="RoundedUITextField" customModule="Privratnik" customModuleProvider="target">
-                                        <rect key="frame" x="55" y="385" width="239" height="42"/>
+                                        <rect key="frame" x="55" y="281" width="184" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="42" id="Vng-Pl-Aml"/>
+                                            <constraint firstAttribute="height" constant="40" id="Vng-Pl-Aml"/>
                                         </constraints>
                                         <color key="textColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -390,16 +389,16 @@
                                 <constraints>
                                     <constraint firstItem="8ff-bC-ple" firstAttribute="leading" secondItem="DvP-OL-5NA" secondAttribute="leading" constant="55" id="1KE-dI-etJ"/>
                                     <constraint firstItem="Vdw-p4-ypJ" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="8kN-iY-1pq"/>
-                                    <constraint firstItem="YPP-dz-oPW" firstAttribute="top" secondItem="DvP-OL-5NA" secondAttribute="top" constant="29" id="bBp-ia-eZM"/>
-                                    <constraint firstItem="e5N-eO-CCa" firstAttribute="top" secondItem="Vdw-p4-ypJ" secondAttribute="bottom" constant="35" id="esg-Ds-6re"/>
+                                    <constraint firstItem="YPP-dz-oPW" firstAttribute="top" secondItem="DvP-OL-5NA" secondAttribute="top" constant="15" id="bBp-ia-eZM"/>
+                                    <constraint firstItem="e5N-eO-CCa" firstAttribute="top" secondItem="Vdw-p4-ypJ" secondAttribute="bottom" constant="20" id="esg-Ds-6re"/>
                                     <constraint firstItem="YPP-dz-oPW" firstAttribute="leading" secondItem="DvP-OL-5NA" secondAttribute="leading" constant="55" id="gN6-dY-sDV"/>
                                     <constraint firstItem="YPP-dz-oPW" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="ix0-g4-KQi"/>
                                     <constraint firstItem="Vdw-p4-ypJ" firstAttribute="top" secondItem="YPP-dz-oPW" secondAttribute="bottom" constant="20" id="k3R-Yd-OC9"/>
                                     <constraint firstItem="e5N-eO-CCa" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="kWx-eu-QVe"/>
                                     <constraint firstItem="8ff-bC-ple" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="qC2-aE-YLp"/>
-                                    <constraint firstItem="8ff-bC-ple" firstAttribute="top" secondItem="zY8-MT-g8d" secondAttribute="bottom" constant="30" id="rgk-Qe-seg"/>
+                                    <constraint firstItem="8ff-bC-ple" firstAttribute="top" secondItem="zY8-MT-g8d" secondAttribute="bottom" constant="20" id="rgk-Qe-seg"/>
                                     <constraint firstItem="zY8-MT-g8d" firstAttribute="centerX" secondItem="DvP-OL-5NA" secondAttribute="centerX" id="sCX-4l-nQ5"/>
-                                    <constraint firstAttribute="bottom" secondItem="8ff-bC-ple" secondAttribute="bottom" constant="20" id="sOO-00-ijT"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8ff-bC-ple" secondAttribute="bottom" constant="15" id="sOO-00-ijT"/>
                                     <constraint firstItem="zY8-MT-g8d" firstAttribute="top" secondItem="e5N-eO-CCa" secondAttribute="bottom" constant="13" id="v9Q-e1-Zlt"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -409,11 +408,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3zc-lM-QTS" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
-                                <rect key="frame" x="108.5" y="543" width="158" height="42"/>
+                                <rect key="frame" x="81" y="432" width="158" height="40"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="158" id="DGz-y9-Cn3"/>
-                                    <constraint firstAttribute="height" constant="42" id="ulf-dF-LwP"/>
+                                    <constraint firstAttribute="height" constant="40" id="ulf-dF-LwP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                 <state key="normal" title="Добавить">
@@ -434,6 +433,7 @@
                         <constraints>
                             <constraint firstItem="DvP-OL-5NA" firstAttribute="leading" secondItem="ucQ-Ul-jd3" secondAttribute="leading" constant="13" id="40R-TO-pk4"/>
                             <constraint firstItem="s3x-Fg-nl6" firstAttribute="top" secondItem="jnp-jx-8yF" secondAttribute="top" id="48l-gC-M7A"/>
+                            <constraint firstItem="DvP-OL-5NA" firstAttribute="height" secondItem="jnp-jx-8yF" secondAttribute="height" multiplier="0.7" id="8Zb-OA-WQc"/>
                             <constraint firstItem="DvP-OL-5NA" firstAttribute="top" secondItem="s3x-Fg-nl6" secondAttribute="bottom" constant="13" id="MtT-7A-q7x"/>
                             <constraint firstItem="3zc-lM-QTS" firstAttribute="top" secondItem="DvP-OL-5NA" secondAttribute="bottom" constant="13" id="NVB-Ku-g4z"/>
                             <constraint firstItem="ucQ-Ul-jd3" firstAttribute="trailing" secondItem="DvP-OL-5NA" secondAttribute="trailing" constant="13" id="Pbz-Rg-pMX"/>
@@ -453,21 +453,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDS-VQ-ASI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2575" y="-287"/>
+            <point key="canvasLocation" x="2574.375" y="-287.32394366197184"/>
         </scene>
         <!--Shlag Baum SettingsVC-->
         <scene sceneID="cuv-SG-AR8">
             <objects>
                 <viewController id="afL-nP-QHm" customClass="ShlagBaumSettingsVC" customModule="Privratnik" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E1K-8M-ri0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ie-Gm-r9Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шлагбаум" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdn-9i-ZfO">
-                                        <rect key="frame" x="146.5" y="34.5" width="82.5" height="21"/>
+                                        <rect key="frame" x="119" y="34.5" width="82.5" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="JGc-gU-48l"/>
                                         </constraints>
@@ -485,7 +485,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFJ-xS-Q8d">
-                                        <rect key="frame" x="281" y="28.5" width="80" height="33"/>
+                                        <rect key="frame" x="226" y="28.5" width="80" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Изменить"/>
                                         <connections>
@@ -505,7 +505,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3u-eb-MAK" customClass="RoundedUIButton" customModule="Privratnik" customModuleProvider="target">
-                                <rect key="frame" x="108.5" y="360.5" width="158" height="42"/>
+                                <rect key="frame" x="81" y="360.5" width="158" height="42"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="42" id="FBW-ko-0Gq"/>
@@ -526,10 +526,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vCD-BG-wSt">
-                                <rect key="frame" x="130" y="87.5" width="240" height="89"/>
+                                <rect key="frame" x="130" y="87.5" width="185" height="89"/>
                                 <subviews>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Название шлагбаума" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="agU-Fh-xKg">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="185" height="42"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="IO7-2H-cgF"/>
@@ -539,7 +539,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Адрес шлагбаума" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="67z-ec-cWf">
-                                        <rect key="frame" x="0.0" y="47" width="240" height="42"/>
+                                        <rect key="frame" x="0.0" y="47" width="185" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="42" id="0Ek-xN-GyZ"/>
                                         </constraints>
@@ -572,11 +572,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xhr-0Z-5jD">
-                                <rect key="frame" x="308" y="231" width="51" height="31"/>
+                                <rect key="frame" x="253" y="231" width="51" height="31"/>
                                 <color key="onTintColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoX-eM-sQ7">
-                                <rect key="frame" x="113" y="608" width="149" height="33"/>
+                                <rect key="frame" x="85.5" y="421" width="149" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Удалить шлагбаум">
                                     <color key="titleColor" red="0.59999999999999998" green="0.15686274510000001" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -586,7 +586,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ee4-y1-ucE">
-                                <rect key="frame" x="97" y="298" width="205" height="50.5"/>
+                                <rect key="frame" x="69.5" y="298" width="205" height="50.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="205" id="hqZ-j4-Eyw"/>
                                 </constraints>
@@ -598,14 +598,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attention" translatesAutoresizingMaskIntoConstraints="NO" id="iKM-Ga-Ee0">
-                                <rect key="frame" x="68" y="312" width="23" height="23"/>
+                                <rect key="frame" x="40.5" y="312" width="23" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="gxp-1h-w3d"/>
                                     <constraint firstAttribute="width" constant="23" id="zou-uh-NTb"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiE-YO-vNq" userLabel="LineView">
-                                <rect key="frame" x="54" y="203" width="267" height="1"/>
+                                <rect key="frame" x="54" y="203" width="212" height="1"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.097680214720000005" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ete-Oh-UWO"/>

@@ -14,5 +14,6 @@ target 'Privratnik' do
   pod 'Alamofire', '~> 4.7'
    pod 'SwiftyJSON'
    pod 'MBProgressHUD', '~> 1.1.0'
+  pod 'IQKeyboardManagerSwift'
 
 end
