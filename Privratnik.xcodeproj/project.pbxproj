@@ -16,6 +16,7 @@
 		32445CCA205A903E00B47474 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32445CC9205A903E00B47474 /* Constants.swift */; };
 		32445CCC205B167300B47474 /* ProgressHUDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32445CCB205B167300B47474 /* ProgressHUDManager.swift */; };
 		32445CCE205B195D00B47474 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32445CCD205B195D00B47474 /* AlertHelper.swift */; };
+		324F81C22077A15E008F6597 /* UIButtonHittableAreaIncreased.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324F81C12077A15E008F6597 /* UIButtonHittableAreaIncreased.swift */; };
 		328DB16D20458927005E4DD1 /* SupportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB16C20458927005E4DD1 /* SupportVC.swift */; };
 		328DB16F20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */; };
 		328DB17120458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328DB17020458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift */; };
@@ -62,6 +63,7 @@
 		32445CC9205A903E00B47474 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		32445CCB205B167300B47474 /* ProgressHUDManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHUDManager.swift; sourceTree = "<group>"; };
 		32445CCD205B195D00B47474 /* AlertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
+		324F81C12077A15E008F6597 /* UIButtonHittableAreaIncreased.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonHittableAreaIncreased.swift; sourceTree = "<group>"; };
 		328DB16C20458927005E4DD1 /* SupportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportVC.swift; sourceTree = "<group>"; };
 		328DB16E20458AB5005E4DD1 /* HideKeyboardWhenTappedAround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardWhenTappedAround.swift; sourceTree = "<group>"; };
 		328DB17020458F17005E4DD1 /* MoveScrollViewEithKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveScrollViewEithKeyboard.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				328DB19520485D44005E4DD1 /* RoundedUIButtonWithProgress.swift */,
 				A1BC60532044332000392411 /* RoundedUIView.swift */,
 				A1BC60512044316400392411 /* RoundedUITextField.swift */,
+				324F81C12077A15E008F6597 /* UIButtonHittableAreaIncreased.swift */,
 				328DB18920472BE3005E4DD1 /* TabBarUIView.swift */,
 				328DB18B20472DEA005E4DD1 /* GradientUIView.swift */,
 				A1BC604E20442EB900392411 /* InnerShadowInUIView.swift */,
@@ -429,6 +432,7 @@
 			files = (
 				328DB1732045AC27005E4DD1 /* AddShlagbaumVC.swift in Sources */,
 				A1BC60542044332000392411 /* RoundedUIView.swift in Sources */,
+				324F81C22077A15E008F6597 /* UIButtonHittableAreaIncreased.swift in Sources */,
 				A1BC60522044316400392411 /* RoundedUITextField.swift in Sources */,
 				328DB16D20458927005E4DD1 /* SupportVC.swift in Sources */,
 				32445CC8205A8DA500B47474 /* Router.swift in Sources */,
