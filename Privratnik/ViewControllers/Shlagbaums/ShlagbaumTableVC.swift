@@ -151,7 +151,7 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ShlagbaumTableViewCell
         
         cell.delegate = self
-        cell.updateLeftRightConstraint()
+
         cell.currentIndexPath = indexPath
         
         let shlagbaum = FakeModel.shared.shlagbaumArray[indexPath.row]
@@ -161,6 +161,7 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
             cell.shlagbaumImageUIImage.image = shlagbaum.photo }
         cell.shlagbaumNeedsUpdate = shlagbaum.needsUpdate
         
+        cell.updateLeftRightConstraint()
         cell.setShlagbaumPresentation()
         
         return cell
