@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Iuq-pt-6Cf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Iuq-pt-6Cf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,12 +20,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="5uu-5k-jGs" kind="relationship" relationship="rootViewController" id="dbI-CP-oYr"/>
+                        <segue destination="5uu-5k-jGs" kind="relationship" relationship="rootViewController" id="pG8-TT-aTx"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aMG-4a-qDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1346" y="73"/>
+            <point key="canvasLocation" x="-1790" y="115"/>
         </scene>
         <!--Login Enter Phone NumberVC-->
         <scene sceneID="tne-QT-ifu">
@@ -389,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pDN-0P-QnE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="819"/>
+            <point key="canvasLocation" x="-454" y="1196"/>
         </scene>
         <!--TabBarVC-->
         <scene sceneID="28t-8g-RFv">
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qzp-pH-wLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-482" y="-134"/>
+            <point key="canvasLocation" x="-84" y="116"/>
         </scene>
     </scenes>
     <resources>
@@ -459,6 +459,6 @@
         <image name="logo2" width="135" height="59"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lCK-Mo-b11"/>
+        <segue reference="0dR-v3-mi3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -46,13 +46,26 @@ class UserAPI {
         
     }
     
+    // Get value
     func isLeftHanded() -> Bool {
         return userDefaults.bool(forKey: "isLeftHanded")
     }
     
+    // Set value
     func isLeftHanded(_ value: Bool) {
         userDefaults.set(value, forKey: "isLeftHanded")
     }
+    
+    // Get value
+    func hasSeenOnboarding() -> Bool {
+        return userDefaults.bool(forKey: "hasSeenOnboarding")
+    }
+    
+    // Set value
+    func hasSeenOnboarding(_ value: Bool){
+        userDefaults.set(value, forKey: "hasSeenOnboarding")
+    }
+    
     
     
     // MARK: Saving user's barrier image
