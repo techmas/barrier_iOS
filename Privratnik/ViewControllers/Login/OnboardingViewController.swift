@@ -13,10 +13,11 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // To be removed:
         
         performSegue(withIdentifier: "passOnboarding", sender: self)
         
-        // #WARNING non-executable
+        // #WARNING non-executable until line above not removed
         
         if UserAPI.shared.hasSeenOnboarding() {
            leaveOnboardingScreen()
