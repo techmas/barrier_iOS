@@ -14,10 +14,12 @@ class LoginRouterVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        showNextScreen()
+        /*
         if UserAPI.shared.hasSeenOnboarding() {
             showNextScreen()
         }
+         */
     }
     
     override func viewDidLoad() {
