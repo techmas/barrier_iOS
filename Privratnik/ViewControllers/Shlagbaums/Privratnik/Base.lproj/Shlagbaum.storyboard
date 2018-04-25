@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DMJ-v7-QIC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DMJ-v7-QIC">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -185,8 +185,8 @@
                                                     </userDefinedRuntimeAttributes>
                                                     <variation key="default">
                                                         <mask key="constraints">
-                                                            <exclude reference="HjN-9g-grB"/>
                                                             <exclude reference="wj5-uO-aLx"/>
+                                                            <exclude reference="HjN-9g-grB"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -523,6 +523,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="oldShlagBaumModernizeButtonPressed:" destination="afL-nP-QHm" eventType="touchUpInside" id="CXy-RD-kNO"/>
+                                    <segue destination="LIq-op-Ni9" kind="show" id="5kT-6d-kDg"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vCD-BG-wSt">
@@ -656,6 +657,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YhF-1T-TfK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2575" y="385"/>
+        </scene>
+        <!--ChatSupport-->
+        <scene sceneID="KM9-0w-LmJ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="JivoChat" referencedIdentifier="ChatSupport" id="LIq-op-Ni9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pm6-c1-XbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3265" y="568"/>
         </scene>
     </scenes>
     <resources>
