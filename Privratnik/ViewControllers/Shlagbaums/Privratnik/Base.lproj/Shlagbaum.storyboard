@@ -156,10 +156,20 @@
                                                                 <action selector="settingsButtonPressed:" destination="qEy-3L-x89" eventType="touchUpInside" id="6NK-9k-FJI"/>
                                                             </connections>
                                                         </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8-903-551-85-11" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHc-XI-TNq">
+                                                            <rect key="frame" x="78" y="52" width="207" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="14" id="qyJ-52-e1u"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.80784313730000001" green="0.80784313730000001" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.15686274510000001" green="0.20784313730000001" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="ogd-Ez-eN4" firstAttribute="top" secondItem="dhQ-rh-hUf" secondAttribute="top" constant="11" id="0oJ-DX-uGy"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AHc-XI-TNq" secondAttribute="trailing" constant="9" id="Fph-fA-kLA"/>
                                                         <constraint firstItem="knO-QU-pFN" firstAttribute="leading" secondItem="dhQ-rh-hUf" secondAttribute="leading" constant="14" id="HjN-9g-grB"/>
                                                         <constraint firstAttribute="trailing" secondItem="5m9-HS-fFt" secondAttribute="trailing" constant="9" id="NFn-Jz-xLh"/>
                                                         <constraint firstItem="lrC-IH-Ilz" firstAttribute="centerY" secondItem="baD-Bd-CfB" secondAttribute="centerY" id="OXu-Pg-H9j"/>
@@ -167,12 +177,14 @@
                                                         <constraint firstItem="knO-QU-pFN" firstAttribute="top" secondItem="ogd-Ez-eN4" secondAttribute="bottom" constant="10" id="SLb-Cd-3Y2"/>
                                                         <constraint firstItem="baD-Bd-CfB" firstAttribute="centerY" secondItem="knO-QU-pFN" secondAttribute="centerY" id="Vva-XD-Jfi"/>
                                                         <constraint firstAttribute="bottom" secondItem="knO-QU-pFN" secondAttribute="bottom" constant="14.5" id="WW3-Or-uA8"/>
+                                                        <constraint firstItem="AHc-XI-TNq" firstAttribute="leading" secondItem="ogd-Ez-eN4" secondAttribute="trailing" constant="9" id="XST-2n-6WM"/>
                                                         <constraint firstAttribute="trailing" secondItem="knO-QU-pFN" secondAttribute="trailing" constant="14" id="ZPf-PX-eyK"/>
                                                         <constraint firstItem="ogd-Ez-eN4" firstAttribute="leading" secondItem="dhQ-rh-hUf" secondAttribute="leading" constant="14" id="ZU1-SN-58p"/>
                                                         <constraint firstItem="Pcb-OV-rb8" firstAttribute="top" secondItem="5m9-HS-fFt" secondAttribute="bottom" constant="1" id="aAI-fY-7Uh"/>
                                                         <constraint firstItem="lrC-IH-Ilz" firstAttribute="leading" secondItem="dhQ-rh-hUf" secondAttribute="leading" constant="14" id="c36-z5-U9K"/>
                                                         <constraint firstItem="Pcb-OV-rb8" firstAttribute="leading" secondItem="ogd-Ez-eN4" secondAttribute="trailing" constant="9" id="hp3-18-10V"/>
                                                         <constraint firstAttribute="trailing" secondItem="Pcb-OV-rb8" secondAttribute="trailing" constant="9" id="nVQ-W8-AQa"/>
+                                                        <constraint firstItem="AHc-XI-TNq" firstAttribute="top" secondItem="Pcb-OV-rb8" secondAttribute="bottom" constant="5" id="tfZ-8U-PQ0"/>
                                                         <constraint firstItem="knO-QU-pFN" firstAttribute="width" secondItem="dhQ-rh-hUf" secondAttribute="width" multiplier="0.3" id="vMd-Xu-wy3"/>
                                                         <constraint firstItem="5m9-HS-fFt" firstAttribute="leading" secondItem="ogd-Ez-eN4" secondAttribute="trailing" constant="9" id="w2O-on-BSO"/>
                                                         <constraint firstAttribute="trailing" secondItem="lrC-IH-Ilz" secondAttribute="trailing" constant="14" id="wj5-uO-aLx"/>
@@ -212,6 +224,7 @@
                                             <outlet property="shlagbaumAdressUILabel" destination="Pcb-OV-rb8" id="8TB-sY-UHe"/>
                                             <outlet property="shlagbaumImageUIImage" destination="ogd-Ez-eN4" id="8YO-As-pb7"/>
                                             <outlet property="shlagbaumName" destination="5m9-HS-fFt" id="EHb-io-Ldj"/>
+                                            <outlet property="shlagbaumPhoneLabel" destination="AHc-XI-TNq" id="u5b-5J-ZtV"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

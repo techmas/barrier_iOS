@@ -159,6 +159,7 @@ extension ShlagbaumTableVC: UITableViewDelegate, UITableViewDataSource, CellButt
         cell.shlagbaumAdressUILabel.text = shlagbaum.adress
         if shlagbaum.photo != nil {
             cell.shlagbaumImageUIImage.image = shlagbaum.photo }
+        cell.shlagbaumPhoneLabel.text = shlagbaum.phone ?? ""
         cell.shlagbaumNeedsUpdate = shlagbaum.needsUpdate
         
         cell.updateLeftRightConstraint()
