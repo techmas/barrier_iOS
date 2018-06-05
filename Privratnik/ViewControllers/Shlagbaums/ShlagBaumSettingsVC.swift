@@ -64,8 +64,9 @@ class ShlagBaumSettingsVC: UIViewController {
         }
         
         // Заполнение полей данными
-        shlagbaumNameTextField.text = selectedShlagbaum.name
-        shlagbaumAdressTextField.text = selectedShlagbaum.adress
+        if (selectedShlagbaum.name != "" && selectedShlagbaum.name != nil) {shlagbaumNameTextField.text = selectedShlagbaum.name}
+        if (selectedShlagbaum.adress != "" && selectedShlagbaum.adress != nil) {shlagbaumAdressTextField.text = selectedShlagbaum.adress}
+       
         if selectedShlagbaum.photo != nil {
             shlagbaumPhotoButton.setImage(selectedShlagbaum.photo, for: .normal)
         }

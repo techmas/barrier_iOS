@@ -65,18 +65,18 @@ class ShlagbaumTableViewCell: UITableViewCell {
         if shlagbaumNeedsUpdate == nil {
             self.cellRoundedUIView.backgroundColor = UIColor.duskBlue
             self.settingsButton.setImage(#imageLiteral(resourceName: "setting1"), for: .normal)
-            self.shlagbaumPhoneLabel.isHidden = true
+            //self.shlagbaumPhoneLabel.isHidden = true
             return
         }
         
         if shlagbaumNeedsUpdate! {
             self.cellRoundedUIView.backgroundColor = UIColor.greyishBrown
             self.settingsButton.setImage(#imageLiteral(resourceName: "setting2"), for: .normal)
-            self.shlagbaumPhoneLabel.isHidden = false
+            //self.shlagbaumPhoneLabel.isHidden = false
         } else {
             self.cellRoundedUIView.backgroundColor = UIColor.duskBlue
             self.settingsButton.setImage(#imageLiteral(resourceName: "setting1"), for: .normal)
-            self.shlagbaumPhoneLabel.isHidden = true
+            //self.shlagbaumPhoneLabel.isHidden = true
         }
         
     }
