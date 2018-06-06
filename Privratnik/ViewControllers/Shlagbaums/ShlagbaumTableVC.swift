@@ -9,7 +9,13 @@
 import UIKit
 import MBProgressHUD
 
-class ShlagbaumTableVC: UIViewController {
+class ShlagbaumTableVC: UIViewController,TableNeedsReloadingNotifyer  {
+    
+    func tableNeedsToBeReloadedFromServer() {
+        refreshControl.beginRefreshing()
+        getDataFromServer()
+    }
+    
 
     @IBOutlet weak var tableView: UITableView!
     var shlagbaumsTableRequireUpdate = false
@@ -47,7 +53,11 @@ class ShlagbaumTableVC: UIViewController {
             guard let destination = segue.destination as? ShlagBaumSettingsVC else {return}
             
             destination.selectedShlagbaum = selectedShlagbaum
-            
+        }
+        
+        if segue.identifier == "addShlagbaum" {
+            guard let destination = segue.destination as? AddShlagbaumVC else {return}
+            destination.delegate = self
         }
     }
     

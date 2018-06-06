@@ -9,6 +9,10 @@
 import UIKit
 import MBProgressHUD
 
+protocol TableNeedsReloadingNotifyer {
+    func tableNeedsToBeReloadedFromServer()
+}
+
 class AddShlagbaumVC: UIViewController {
     @IBAction func backButtonPressed(_ sender: Any){
         self.navigationController?.popViewController(animated: true)
@@ -30,6 +34,8 @@ class AddShlagbaumVC: UIViewController {
     @IBAction func addButtonPressed(_ sender: Any) {
         addShlagbaumToServerWithDataFromView()
     }
+    
+    var delegate:TableNeedsReloadingNotifyer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +78,7 @@ class AddShlagbaumVC: UIViewController {
                 }
             }
             
+            self?.delegate?.tableNeedsToBeReloadedFromServer()
             self?.navigationController?.popViewController(animated: true)
         }
     }
